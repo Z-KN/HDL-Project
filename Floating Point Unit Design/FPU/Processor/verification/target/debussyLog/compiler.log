@@ -1,0 +1,24 @@
+*design* DebussyLib (btIdent Verdi3_I-2014.03)
+Command arguments:
+    +define+verilog
+    -f file.filelist
+        /home/edauser/Processor/testbench/tb.v
+        /home/edauser/Processor/testbench/memory.v
+        /home/edauser/Processor/rtl/processor/processor.v
+
+
+*Error* Syntax error at ]
+"/home/edauser/Processor/testbench/tb.v", 48: 
+Highest level modules:
+tb
+
+
+*Error* failed to find identifier mem_temp
+"/home/edauser/Processor/testbench/tb.v", 52: 
+
+*Error* failed to find identifier mem_temp.size
+"/home/edauser/Processor/testbench/tb.v", 53: 
+
+*Error* failed to find identifier mem_temp[i][31:0]
+"/home/edauser/Processor/testbench/tb.v", 56: 
+Total	4 error(s),   0 warning(s)

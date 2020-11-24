@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE cov SYSTEM "ucdb_srcinfo.dtd">
+  <srcinfo name="/mnt/hgfs/SF/HD32"  >
+    <ucapi_version  major_ver="13"  minor_ver="1"  patch_str="G-2012.09"  />
+      <fileinfo name="testbench.v"  id="0"  />
+      <fileinfo name="HD32.v"  id="1"  />
+    </srcinfo>

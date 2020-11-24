@@ -1,0 +1,20 @@
+15:37:28    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe ./simv -pid 12028 -toolin /tmp/vcs_20201025073727_12027_edauser..stdin -toolout /tmp/vcs_20201025073727_12027_edauser..stdout  
+15:37:28    17 -->                                                                 [tcl] set ucliGUI::state
+15:37:28    18 -->                                                                     [tcl] gui_update_simulator_buttons
+15:37:28    19 -->                                                                         [tcl] set ucliGUI::state
+15:37:28    20 -->                                                                             [tcl] ucliCore::getToolPID
+15:37:28    21 -->                                                                                 [tcl] synopsys::env hasTB
+15:37:28    22 -->                                                                                     [tcl] trigger_hier_stack_context_switch 0
+15:37:28    23 -->                                                                                         [tcl] gui_get_env SIMSETUP::SIMVPD
+15:37:28    24 -->                                                                                             [tcl] synUtils::setDVEInitPhase 1
+15:37:28    25 --> ...  [tcl] synopsys::dump -type VPD -file /mnt/hgfs/SF CentOS EDA/HD32/inter.vpd -locking
+15:37:28    26 --> ...      [tcl] synUtils::setDVEInitPhase 0
+[DVIT043] 
+Failed to start simulator.15:37:28    27 --> ...          [tcl] synopsys::finish
+15:37:28    28 --> ...              [tcl] set ucliGUI::state
+15:37:29    29 --> ...                  [tcl] set ucliGUI::state
+15:37:29    30 --> ...                      [tcl] catch {senv activeDomain} dveMisc::result 
+15:37:29    31 --> ...                          [tcl] set dveMisc::result
+15:37:29    32 --> ...                              [tcl] gui_update_simulator_buttons
+15:37:37    33 --> ...                                  [tcl] if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+15:37:37    34 --> ...                                      [tcl] ucli_exit

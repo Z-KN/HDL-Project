@@ -1,0 +1,89 @@
+0 
+30
++cli+4
++itf+/tools/synopsys/vcs_vG-2012.09/amd64/lib/vcsd.tab
++memcbk
++vcsd
++vpi
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=g++
+-Mcfl= -pipe -O -I/tools/synopsys/vcs_vG-2012.09/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags=
+-Mobjects= /tools/synopsys/vcs_vG-2012.09/amd64/lib/libvirsim.so /tools/synopsys/vcs_vG-2012.09/amd64/lib/liberrorinf.so /tools/synopsys/vcs_vG-2012.09/amd64/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/tools/synopsys/vcs_vG-2012.09/amd64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl -lm
+-Mvcsaceobjs=
+-debug=3
+-full64
+-gen_obj
+-gui
+-sverilog
+-ucli
+../rtl/processor/processor.v
+/tools/synopsys/vcs_vG-2012.09/amd64/bin/vcs1
+memory.v
+tb.v
+45
+sysc_uni_pwd=/mnt/hgfs/SF/FPU/Processor/testbench
+XDG_SESSION_COOKIE=2e570336c1eacf6f3b98730c00000015-1603888988.483000-1595451290
+XAUTHORITY=/var/run/gdm/auth-for-edauser-WG0GVz/database
+WINDOWPATH=1
+VMR_MODE_FLAG=64
+VENDOR=unknown
+VCS_MODE_FLAG=64
+VCS_HOME=/tools/synopsys/vcs_vG-2012.09
+VCS_DEPTH=0
+VCS_CC=g++
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=amd64
+USERNAME=edauser
+UNAME=/bin/uname
+TOOL_HOME=/tools/synopsys/vcs_vG-2012.09/amd64
+SSH_AUTH_SOCK=/tmp/keyring-Qcgynj/socket.ssh
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPSLMD_LICENSE_FILE=27000@localhost:/tools/synopsys/vcs_vG-2012.09/flexlm//license.dat
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2837,unix/unix:/tmp/.ICE-unix/2837
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+OVA_UUM=0
+OSTYPE=linux
+ORBIT_SOCKETDIR=/tmp/orbit-edauser
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+LC_ALL=C
+HOSTTYPE=x86_64-linux
+HOSTNAME=localhost.localdomain
+HOST=localhost.localdomain
+G_BROKEN_FILENAMES=1
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/edauser/.gtkrc-1.2-gnome2
+GROUP=edauser
+GNOME_KEYRING_SOCKET=/tmp/keyring-Qcgynj/socket
+GNOME_KEYRING_PID=2804
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GDM_LANG=en_US.UTF-8
+GDM_KEYBOARD_LAYOUT=us
+GDMSESSION=gnome
+DESKTOP_SESSION=gnome
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-nAk8CKEgCO,guid=4ae2911c7ee765e605aa90e7000000bb
+CVS_RSH=ssh
+COLORTERM=gnome-terminal
+0
+4
+1492733948 ../rtl/processor/processor.v
+1460557108 memory.v
+1464878324 tb.v
+1345792088 /tools/synopsys/vcs_vG-2012.09/amd64/lib/vcsd.tab
+4
+0 
+1345792743 /tools/synopsys/vcs_vG-2012.09/amd64/lib/libvirsim.so
+1345792505 /tools/synopsys/vcs_vG-2012.09/amd64/lib/liberrorinf.so
+1345792224 /tools/synopsys/vcs_vG-2012.09/amd64/lib/libsnpsmalloc.so

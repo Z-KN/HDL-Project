@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<opml version="1.0">
+	<head>
+		<title>VCS dump file for DVE debugging</title>
+		<vcsVersion>G-2012.09</vcsVersion>
+		<dateCreated>Sat Nov  7 08:33:13 2020</dateCreated>
+	</head>
+	<body>
+		<!-- VCS compile options -->
+		<vcsCompileOptions text="/tools/synopsys/vcs_vG-2012.09/linux/bin/vcs1 -Mcc=g++ -Mcplusplus=g++ -Masflags=--32 -Mcfl= -pipe -m32 -O -I/tools/synopsys/vcs_vG-2012.09/include  -Mldflags= -melf_i386 -m32  -Mout=simv -Mamsrun= -Mvcsaceobjs= -Mobjects= /tools/synopsys/vcs_vG-2012.09/linux/lib/libvirsim.so /tools/synopsys/vcs_vG-2012.09/linux/lib/librterrorinf.so /tools/synopsys/vcs_vG-2012.09/linux/lib/libsnpsmalloc.so  -Msaverestoreobj=/tools/synopsys/vcs_vG-2012.09/linux/lib/vcs_save_restore_new.o -Mcrt0= -Mcrtn= -Mcsrc= -Mupdate -Msyslibs=/tools/synopsys/vcs_vG-2012.09/linux/lib/ctype-stubs_32.a -ldl -lm  +v2k +libext+.v+.h -q -Xcbug=0x1 -debug_all -cm line+cond+fsm+branch+tgl +cli+4 +vcsd +itf+/tools/synopsys/vcs_vG-2012.09/linux/lib/vcsd.tab +vpi -line -debug=4 +memcbk -sverilog +vpi -gen_obj /mnt/hgfs/SF/FPU/Processor//testbench/tb.v /mnt/hgfs/SF/FPU/Processor//rtl/processor/processor.v /mnt/hgfs/SF/FPU/Processor//rtl/processor/fpu.v -y /mnt/hgfs/SF/FPU/Processor//testbench/ -y /mnt/hgfs/SF/FPU/Processor//rtl/processor/ "/>
+		<!-- File list for the whole design -->
+		<fileList>
+			<file fid="0" path="/mnt/hgfs/SF/FPU/Processor/rtl/processor/processor.v" />
+			<file fid="1" path="/mnt/hgfs/SF/FPU/Processor/rtl/processor/fpu.v" />
+			<file fid="2" path="/mnt/hgfs/SF/FPU/Processor/testbench/memory.v" />
+			<file fid="3" path="/mnt/hgfs/SF/FPU/Processor/testbench/tb.v" />
+		</fileList>
+		<!-- Include file list for the whole design -->
+		<includeFileList>
+		</includeFileList>
+		<!-- Encrypted codes list for the whole design -->
+		<encryptedCodesList>
+		</encryptedCodesList>
+		<!-- Inactive codes list for the whole design -->
+		<inactiveCodesList>
+		</inactiveCodesList>
+		<!-- Compile options UUM based -->
+		<langKeywords>
+			<svFiles fid="0-3" />
+		</langKeywords>
+		<!--  Case insensitive file list -->
+		<caseInsensitiveFiles fid="" />
+		<!-- Macro definition list for the whole design --> 
+		<macroDefinitionList>
+			<macro name="CLK_PERIOD" module="unnamed$$_1" sourceID="3" lineno="31" defID="3" defLine="1" value="1"  vip="false"/>
+			<macro name="MAX_RUN_TIME" module="unnamed$$_7" sourceID="3" lineno="86" defID="3" defLine="2" value="2"  vip="false"/>
+		</macroDefinitionList>
+		<!-- Macro value list for the whole design --> 
+		<macroValueList>
+			<mv i="1" n="10" />
+			<mv i="2" n="600 " />
+		</macroValueList>
+	</body>
+</opml>

@@ -1,0 +1,1 @@
+vcs "+v2k" "-Mupdate" "-sverilog" "+define+TSMC_NO_WARNING" "+nospecify" "+notimingchecks" "-timescale=1ns/100ps" "/home/chenzj/Processor//testbench/tb.v" "-y" "/home/chenzj/Processor//testbench/soc" "-y" "/home/chenzj/Processor//rtl/processor/" "-y" "/home/chenzj/Processor//rtl/memory/" "-y" "/home/chenzj/Processor//rtl/designware/" "-y" "../testbench/" "+libext+.v+.h" "-R"

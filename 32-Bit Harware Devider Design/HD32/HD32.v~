@@ -1,0 +1,67 @@
+// HD32.v
+
+`define InputWidth 32
+`define OutputWidth 32
+
+module HD32(
+    input [`InputWidth-1:0] dividend,
+    input [`InputWidth-1:0] divider,
+    output reg [`OutputWidth-1:0] quotient,
+    output reg [`OutputWidth-1:0] remainder
+    // input clk;
+);
+
+reg [`InputWidth-1:0] msb_dividend; // the first "1" in dividend
+reg [`InputWidth-1:0] msb_divider;  // the first "1" in divider
+
+reg [`InputWidth-1:0] reg_dividend;  
+reg [`InputWidth-1:0] reg_divider;  
+
+// determine the msb of 1
+always @(dividend) begin
+reg_dividend=dividend;
+msb_dividend=msb(dividend);
+$display("msb_dividend=%d",msb_dividend);
+end
+always @(divider) begin
+reg_divider=divider;
+msb_divider=msb(divider);
+$display("msb_divider=%d",msb_divider);
+end
+
+always @(dividend or divider) begin
+quotient=32'b0;
+remainder=32'b0;
+end
+/*
+always @(reg_divider or reg_dividend) begin
+    //compare two oprators
+    if
+end
+*/
+
+
+// function, determine msb for 1
+function [`InputWidth-1:0] msb;
+input [`InputWidth-1:0] in;
+begin:func
+integer [`InputWidth-1:0] i; // iteration variable
+reg flag; // whether find msb yet
+flag=0; 
+    for(i=`InputWidth-1;i>=0;i=i-1)
+    begin
+    /*
+        if (flag==0) begin  // not find msb yet
+            if (in[i]==1) begin
+            msb=i;
+            flag=1;
+            end
+            */
+    end
+    if (in[i]==1) begin
+    msb=i;
+    i=0;
+    end
+endfunction
+endmodule
+

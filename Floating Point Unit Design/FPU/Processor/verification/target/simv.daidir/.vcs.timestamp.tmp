@@ -1,0 +1,105 @@
+0 
+40
++cli+4
++itf+/tools/synopsys/vcs_vG-2012.09/linux/lib/vcsd.tab
++libext+.v+.h
++memcbk
++v2k
++vcsd
++vpi
++vpi
+-Mamsrun=
+-Masflags=--32
+-Mcc=g++
+-Mcfl= -pipe -m32 -O -I/tools/synopsys/vcs_vG-2012.09/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags= -melf_i386 -m32
+-Mobjects= /tools/synopsys/vcs_vG-2012.09/linux/lib/libvirsim.so /tools/synopsys/vcs_vG-2012.09/linux/lib/librterrorinf.so /tools/synopsys/vcs_vG-2012.09/linux/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/tools/synopsys/vcs_vG-2012.09/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/tools/synopsys/vcs_vG-2012.09/linux/lib/ctype-stubs_32.a -ldl -lm
+-Mupdate
+-Mvcsaceobjs=
+-Xcbug=0x1
+-cm
+-debug=4
+-debug_all
+-gen_obj
+-line
+-q
+-sverilog
+-y
+-y
+/mnt/hgfs/SF/FPU/Processor//rtl/processor/
+/mnt/hgfs/SF/FPU/Processor//rtl/processor/fpu.v
+/mnt/hgfs/SF/FPU/Processor//rtl/processor/processor.v
+/mnt/hgfs/SF/FPU/Processor//testbench/
+/mnt/hgfs/SF/FPU/Processor//testbench/tb.v
+/tools/synopsys/vcs_vG-2012.09/linux/bin/vcs1
+line+cond+fsm+branch+tgl
+49
+sysc_uni_pwd=/mnt/hgfs/SF/FPU/Processor/verification/target
+XDG_SESSION_COOKIE=2e570336c1eacf6f3b98730c00000015-1604708829.658214-1732909094
+XAUTHORITY=/var/run/gdm/auth-for-edauser-R0KcsM/database
+WINDOWPATH=1
+VMR_MODE_FLAG=32
+VENDOR=unknown
+VCS_HOME=/tools/synopsys/vcs_vG-2012.09
+VCS_DEPTH=0
+VCS_CC=g++
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+USE_LOCAL=0
+USERNAME=edauser
+UNAME=/bin/uname
+TOOL_HOME=/tools/synopsys/vcs_vG-2012.09/linux
+SSH_AUTH_SOCK=/tmp/keyring-CJFllL/socket.ssh
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPSLMD_LICENSE_FILE=27000@localhost:/tools/synopsys/vcs_vG-2012.09/flexlm//license.dat
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2874,unix/unix:/tmp/.ICE-unix/2874
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PROCESSOR_PATH=/mnt/hgfs/SF/FPU/Processor/
+OVA_UUM=0
+OSTYPE=linux
+ORBIT_SOCKETDIR=/tmp/orbit-edauser
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+LC_ALL=C
+HOSTTYPE=x86_64-linux
+HOSTNAME=localhost.localdomain
+HOST=localhost.localdomain
+G_BROKEN_FILENAMES=1
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/edauser/.gtkrc-1.2-gnome2
+GROUP=edauser
+GNOME_KEYRING_SOCKET=/tmp/keyring-CJFllL/socket
+GNOME_KEYRING_PID=2841
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GDM_LANG=en_US.UTF-8
+GDM_KEYBOARD_LAYOUT=us
+GDMSESSION=gnome
+GCC_VER=4.4.7
+DESKTOP_SESSION=gnome
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-x1Kzk5NQKa,guid=56dd8d3c47ce94a08c5cf3250000004f
+CVS_RSH=ssh
+COLORTERM=gnome-terminal
+ARCH=linux
+0
+6
+1604668268 /mnt/hgfs/SF/FPU/Processor//testbench/memory.v
+1604660653 /mnt/hgfs/SF/FPU/Processor//rtl/processor/fpu.v
+1604669156 /mnt/hgfs/SF/FPU/Processor//rtl/processor/processor.v
+1604655308 /mnt/hgfs/SF/FPU/Processor//testbench/tb.v
+1345792037 /tools/synopsys/vcs_vG-2012.09/include/cm_vcsd.tab
+1345792037 /tools/synopsys/vcs_vG-2012.09/linux/lib/vcsd.tab
+4
+0 
+1345792714 /tools/synopsys/vcs_vG-2012.09/linux/lib/libvirsim.so
+1345792230 /tools/synopsys/vcs_vG-2012.09/linux/lib/librterrorinf.so
+1345792158 /tools/synopsys/vcs_vG-2012.09/linux/lib/libsnpsmalloc.so

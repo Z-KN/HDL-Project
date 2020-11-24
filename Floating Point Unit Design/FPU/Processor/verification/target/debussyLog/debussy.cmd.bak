@@ -1,0 +1,3 @@
+debImport "-f" "file.filelist"
+verdiDockWidgetDisplay -dock widgetDock_WelcomePage
+debExit

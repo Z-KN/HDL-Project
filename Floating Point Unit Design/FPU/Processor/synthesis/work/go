@@ -1,0 +1,1 @@
+/tools/synopsys/syn_vG-2012.06-SP2/bin/dc_shell-t -64bit -f ../script/syn_script.tcl | tee ./synthesis.log

@@ -1,0 +1,67 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_I-2014.03
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+[hb]
+postSimFile = /home/edauser/Processor/verification/target/test.vcd.fsdb
+syncTime = 13650
+viewport = 0 25 1918 779 568 292 290 1916
+activeNode = "tb"
+activeScope = "tb"
+activeFile = "/home/edauser/Processor/testbench/tb.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 5
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = True
+Scope1 = "tb"
+multipleSelection = 2 23 12 0 0 23 17 0 0
+sdfCheckUndef = FALSE
+[hb.sourceTab.1]
+scope = tb
+File = /home/edauser/Processor/testbench/tb.v
+Line = 6
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/edauser/Processor/testbench
+design = DebussyLib
+hostCommand = hostCommand /home/edauser/Processor/testbench/tb.v
+[nMemoryManager]
+FsdbFile = /home/edauser/Processor/verification/target/test.vcd.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 30 1918 291 279 65
+SessionFile = /home/edauser/Processor/verification/target/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

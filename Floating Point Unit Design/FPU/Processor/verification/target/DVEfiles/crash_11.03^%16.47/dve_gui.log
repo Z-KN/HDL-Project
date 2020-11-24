@@ -1,0 +1,59 @@
+Chronologic VCS simulator copyright 1991-2012
+Contains Synopsys proprietary information.
+Compiler version G-2012.09; Runtime version G-2012.09;  Nov  3 16:47 2020
+VCD+ Writer G-2012.09 Copyright (c) 1991-2012 by Synopsys Inc.
+The file '/mnt/hgfs/SF/FPU/Processor/verification/target/inter.vpd' was opened successfully.
+---------------------------------------------
+
+The tool has just exited abnormally:
+
+
+Release = 'G-2012.09'  Architecture = 'linux'  Program = 'DVE'
+
+'160637513 160658032 160661547 6549127 146139255 146884175 -143571952 146134241 170776536 170776422 146132738 145870155 143143611 6454582'
+
+---------------------------------------------
+=======================DVE Context and Call Stack=========================
+Command line: /tools/synopsys/vcs_vG-2012.09/gui/dve/linux/bin/dve.exe -ucliplatform=linux -toolargs "-ucligui -toolexe ./simv  -pid 14764" -toolin /tmp/vcs_20201103083536_14763_edauser..stdin -toolout /tmp/vcs_20201103083536_14763_edauser..stdout
+
+--- Stack trace follows:
+[Thread debugging using libthread_db enabled]
+[New Thread 0xf6479b70 (LWP 14778)]
+0xf7714430 in __kernel_vsyscall ()
+
+Thread 2 (Thread 0xf6479b70 (LWP 14778)):
+#0  0xf7714430 in __kernel_vsyscall ()
+#1  0xf6c0f794 in pthread_cond_timedwait@@GLIBC_2.3.2 () from /lib/libpthread.so.0
+#2  0x0a2c65cf in ?? ()
+#3  0x0a2c6ac0 in QThread::msleep(unsigned long) ()
+#4  0x08b1a06a in ag::dveXThread::run() ()
+#5  0x0a2c667c in QThreadInstance::start(void*) ()
+#6  0xf6c0bb39 in start_thread () from /lib/libpthread.so.0
+#7  0x006f3c2e in clone () from /lib/libc.so.6
+
+Thread 1 (Thread 0xf6488750 (LWP 14777)):
+#0  0xf7714430 in __kernel_vsyscall ()
+#1  0x006b229b in waitpid () from /lib/libc.so.6
+#2  0x0064bc53 in do_system () from /lib/libc.so.6
+#3  0x0064bfe2 in system () from /lib/libc.so.6
+#4  0xf6c1395d in system () from /lib/libpthread.so.0
+#5  0xf753e019 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be646006121000822323a7337474f31850 () from /tools/synopsys/vcs_vG-2012.09/linux/lib/liberrorinf.so
+#6  0xf753f307 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /tools/synopsys/vcs_vG-2012.09/linux/lib/liberrorinf.so
+#7  0xf7537cf6 in SNPSle_d35ca1ff70d465c24c71e1f0ad6ba632 () from /tools/synopsys/vcs_vG-2012.09/linux/lib/liberrorinf.so
+#8  0x09937214 in ag::logErrorMessage(ag::errorType, QString const&) ()
+#9  0x0993802b in ?? ()
+#10 0x0063ee87 in exit () from /lib/libc.so.6
+#11 0x08b5e877 in VCS_EXIT ()
+#12 0x08c1464f in SigHandler ()
+#13 <signal handler called>
+#14 0xf7714430 in __kernel_vsyscall ()
+#15 0x006ebf81 in select () from /lib/libc.so.6
+#16 0x0a28df21 in QEventLoop::processEvents(unsigned int) ()
+#17 0x08b5d4e1 in ag::ovaEventLoop::processEvents(unsigned int) ()
+#18 0x0a2dd7d8 in QEventLoop::enterLoop() ()
+#19 0x0a2dd766 in QEventLoop::exec() ()
+#20 0x08b5cf02 in run_cci_event_loop ()
+#21 0x08b1cd4b in ag::ovaAppInst::enterEventLoop(int, char**) ()
+#22 0x088832bb in main ()
+No context available
+==========================================================================

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<opml version="1.0">
+	<head>
+		<title>VCS dump file for DVE debugging</title>
+		<vcsVersion>G-2012.09</vcsVersion>
+		<dateCreated>Wed Oct 28 20:45:24 2020</dateCreated>
+	</head>
+	<body>
+		<!-- VCS compile options -->
+		<vcsCompileOptions text="/tools/synopsys/vcs_vG-2012.09/linux/bin/vcs1 -Mcc=g++ -Mcplusplus=g++ -Masflags=--32 -Mcfl= -pipe -m32 -O -I/tools/synopsys/vcs_vG-2012.09/include  -Mldflags= -melf_i386 -m32  -Mout=simv -Mamsrun= -Mvcsaceobjs= -Mobjects= /tools/synopsys/vcs_vG-2012.09/linux/lib/libvirsim.so /tools/synopsys/vcs_vG-2012.09/linux/lib/librterrorinf.so /tools/synopsys/vcs_vG-2012.09/linux/lib/libsnpsmalloc.so  -Msaverestoreobj=/tools/synopsys/vcs_vG-2012.09/linux/lib/vcs_save_restore_new.o -Mcrt0= -Mcrtn= -Mcsrc= -Msyslibs=/tools/synopsys/vcs_vG-2012.09/linux/lib/ctype-stubs_32.a -ldl -lm  -q -Xcbug=0x1 -debug_all +cli+4 +vcsd +itf+/tools/synopsys/vcs_vG-2012.09/linux/lib/vcsd.tab +vpi -line -debug=4 +memcbk +vpi -gen_obj testbench.v "/>
+		<!-- File list for the whole design -->
+		<fileList>
+			<file fid="0" path="/mnt/hgfs/SF/HD32/testbench.v" />
+		</fileList>
+		<!-- Include file list for the whole design -->
+		<includeFileList>
+		</includeFileList>
+		<!-- Encrypted codes list for the whole design -->
+		<encryptedCodesList>
+		</encryptedCodesList>
+		<!-- Inactive codes list for the whole design -->
+		<inactiveCodesList>
+		</inactiveCodesList>
+		<!-- Compile options UUM based -->
+		<langKeywords>
+			<v2kFiles fid="0" />
+		</langKeywords>
+		<!--  Case insensitive file list -->
+		<caseInsensitiveFiles fid="" />
+		<!-- Macro definition list for the whole design --> 
+		<macroDefinitionList>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="10" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="11" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="OutputWidth" module="testbench" sourceID="0" lineno="13" defID="0" defLine="4" value="1"  vip="false"/>
+			<macro name="OutputWidth" module="testbench" sourceID="0" lineno="14" defID="0" defLine="4" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="44" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="45" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="47" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="49" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="51" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="53" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="55" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="57" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="61" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="62" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="64" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="66" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="68" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="70" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="72" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="73" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="75" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="77" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="79" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="80" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="82" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="84" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="86" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="88" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="90" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="91" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="93" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="95" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="97" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="99" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="101" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="103" defID="0" defLine="3" value="1"  vip="false"/>
+			<macro name="InputWidth" module="testbench" sourceID="0" lineno="105" defID="0" defLine="3" value="1"  vip="false"/>
+		</macroDefinitionList>
+		<!-- Macro value list for the whole design --> 
+		<macroValueList>
+			<mv i="1" n="32" />
+		</macroValueList>
+	</body>
+</opml>

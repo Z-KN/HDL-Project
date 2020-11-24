@@ -1,0 +1,19 @@
+*design* DebussyLib (btIdent Verdi3_I-2014.03)
+Command arguments:
+    +define+verilog
+    /mnt/hgfs/SF
+    CentOS
+    EDA/HD32/HD32.v
+
+
+*Error* failed to open source file "/mnt/hgfs/SF" with read access: No such file or directory
+
+
+*Error* failed to open source file "CentOS" with read access: No such file or directory
+
+
+*Error* failed to open source file "EDA/HD32/HD32.v" with read access: No such file or directory
+
+Highest level modules:
+
+Total	3 error(s),   0 warning(s)

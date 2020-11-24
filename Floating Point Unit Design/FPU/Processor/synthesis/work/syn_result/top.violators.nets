@@ -1,0 +1,647 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+Design : top
+Version: G-2012.06-SP2
+Date   : Fri Nov  6 21:19:43 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: WCCOM   Library: tcbn65lpbwp12tlvtwc
+Wire Load Model Mode: segmented
+
+  Startpoint: x_fpu/operand2_reg[30]
+              (rising edge-triggered flip-flop clocked by CPU_CLOCK)
+  Endpoint: x_fpu/result64_reg[29]
+            (rising edge-triggered flip-flop clocked by CPU_CLOCK)
+  Path Group: CPU_CLOCK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW_cmp_28      ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_sub_60    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_84    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_110   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_93    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_102   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_101   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_85    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_86    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_104   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_103   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_108   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_94    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_87    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_88    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_100   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_99    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_89    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_98    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_109   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_95    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_90    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_107   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_105   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_91    ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_106   ZeroWireload          tcbn65lpbwp12tlvtwc
+  top_DW01_add_92    ZeroWireload          tcbn65lpbwp12tlvtwc
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock CPU_CLOCK (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  x_fpu/operand2_reg[30]/CP (DFKCNQD4BWP12TLVT)           0.00 #     0.00 r
+  x_fpu/operand2_reg[30]/Q (DFKCNQD4BWP12TLVT)            0.14       0.14 f
+  x_fpu/wire64_result[3][30] (net)             13         0.00       0.14 f
+  U7598/ZN (INVD1BWP12TLVT)                               0.03       0.16 r
+  n14688 (net)                                  2         0.00       0.16 r
+  U17353/Z (AN4XD1BWP12TLVT)                              0.10       0.26 r
+  n11226 (net)                                  1         0.00       0.26 r
+  U8052/ZN (CKND2D2BWP12TLVT)                             0.04       0.30 f
+  x_fpu/x_muls/N15 (net)                        3         0.00       0.30 f
+  U17251/ZN (NR2XD1BWP12TLVT)                             0.03       0.33 r
+  n9912 (net)                                   1         0.00       0.33 r
+  U17296/ZN (CKND2D2BWP12TLVT)                            0.03       0.35 f
+  n12779 (net)                                  1         0.00       0.35 f
+  U17295/ZN (CKND2BWP12TLVT)                              0.03       0.38 r
+  n13282 (net)                                  3         0.00       0.38 r
+  U17271/ZN (ND2D2BWP12TLVT)                              0.02       0.40 f
+  n12780 (net)                                  1         0.00       0.40 f
+  U7740/ZN (CKND2BWP12TLVT)                               0.03       0.42 r
+  n13217 (net)                                  2         0.00       0.42 r
+  U7739/Z (AN2D4BWP12TLVT)                                0.06       0.48 r
+  n6588 (net)                                   3         0.00       0.48 r
+  U6798/ZN (ND3D3BWP12TLVT)                               0.04       0.52 f
+  n12781 (net)                                  1         0.00       0.52 f
+  U7476/ZN (INVD1BWP12TLVT)                               0.04       0.55 r
+  n13159 (net)                                  2         0.00       0.55 r
+  U6796/Z (AN2D4BWP12TLVT)                                0.06       0.61 r
+  n7046 (net)                                   3         0.00       0.61 r
+  U6795/Z (AN3D4BWP12TLVT)                                0.08       0.69 r
+  n7065 (net)                                   2         0.00       0.69 r
+  U8075/ZN (CKND2D4BWP12TLVT)                             0.03       0.72 f
+  n12782 (net)                                  1         0.00       0.72 f
+  U6985/ZN (CKND4BWP12TLVT)                               0.03       0.74 r
+  n13056 (net)                                  3         0.00       0.74 r
+  U6983/ZN (CKND2D4BWP12TLVT)                             0.02       0.77 f
+  n12783 (net)                                  1         0.00       0.77 f
+  U6986/ZN (CKND3BWP12TLVT)                               0.02       0.79 r
+  n13020 (net)                                  3         0.00       0.79 r
+  U7340/ZN (ND3D3BWP12TLVT)                               0.04       0.82 f
+  n12784 (net)                                  1         0.00       0.82 f
+  U7339/ZN (CKND2BWP12TLVT)                               0.03       0.85 r
+  n12985 (net)                                  2         0.00       0.85 r
+  U7842/Z (AN2XD1BWP12TLVT)                               0.05       0.90 r
+  n6593 (net)                                   2         0.00       0.90 r
+  U7803/Z (CKAN2D2BWP12TLVT)                              0.07       0.97 r
+  n6573 (net)                                   3         0.00       0.97 r
+  U6803/ZN (ND3D4BWP12TLVT)                               0.04       1.01 f
+  n12785 (net)                                  1         0.00       1.01 f
+  U7757/ZN (CKND4BWP12TLVT)                               0.03       1.04 r
+  n12872 (net)                                  2         0.00       1.04 r
+  U8042/ZN (CKND2D4BWP12TLVT)                             0.03       1.07 f
+  n12802 (net)                                  2         0.00       1.07 f
+  U9235/ZN (NR2XD2BWP12TLVT)                              0.04       1.11 r
+  n7067 (net)                                   3         0.00       1.11 r
+  U6801/ZN (CKND2D4BWP12TLVT)                             0.03       1.14 f
+  n16639 (net)                                  4         0.00       1.14 f
+  U7632/ZN (INVD3BWP12TLVT)                               0.04       1.18 r
+  n13381 (net)                                  5         0.00       1.18 r
+  U8913/ZN (ND4D4BWP12TLVT)                               0.04       1.22 f
+  n7185 (net)                                   1         0.00       1.22 f
+  U8937/ZN (OAI22D2BWP12TLVT)                             0.08       1.30 r
+  n13368 (net)                                  2         0.00       1.30 r
+  U8240/ZN (INVD2BWP12TLVT)                               0.03       1.32 f
+  n12800 (net)                                  3         0.00       1.32 f
+  U18593/ZN (OAI32D1BWP12TLVT)                            0.07       1.39 r
+  n12826 (net)                                  1         0.00       1.39 r
+  U7773/ZN (INVD1BWP12TLVT)                               0.03       1.43 f
+  n6561 (net)                                   1         0.00       1.43 f
+  U7774/ZN (CKND2BWP12TLVT)                               0.03       1.46 r
+  n6562 (net)                                   5         0.00       1.46 r
+  U6650/ZN (INVD2BWP12TLVT)                               0.02       1.47 f
+  n12806 (net)                                  3         0.00       1.47 f
+  U8214/ZN (ND2D0BWP12TLVT)                               0.03       1.51 r
+  n12822 (net)                                  2         0.00       1.51 r
+  U18595/ZN (AOI221D1BWP12TLVT)                           0.05       1.56 f
+  n12801 (net)                                  1         0.00       1.56 f
+  U17278/ZN (AOI211D0BWP12TLVT)                           0.19       1.74 r
+  n12812 (net)                                  1         0.00       1.74 r
+  U7051/ZN (ND2D3BWP12TLVT)                               0.05       1.80 f
+  n12851 (net)                                  5         0.00       1.80 f
+  U17309/ZN (ND2D0BWP12TLVT)                              0.04       1.84 r
+  n12832 (net)                                  1         0.00       1.84 r
+  U18616/ZN (MUX2ND0BWP12TLVT)                            0.05       1.89 f
+  n12833 (net)                                  1         0.00       1.89 f
+  U7061/ZN (AOI31D2BWP12TLVT)                             0.07       1.96 r
+  n12836 (net)                                  1         0.00       1.96 r
+  U7057/ZN (ND2D2BWP12TLVT)                               0.04       2.00 f
+  n12867 (net)                                  4         0.00       2.00 f
+  U7065/ZN (CKND1BWP12TLVT)                               0.03       2.04 r
+  n12904 (net)                                  4         0.00       2.04 r
+  U7837/Z (AN2XD1BWP12TLVT)                               0.06       2.10 r
+  n6590 (net)                                   3         0.00       2.10 r
+  U7478/ZN (OAI21D1BWP12TLVT)                             0.04       2.13 f
+  n12869 (net)                                  2         0.00       2.13 f
+  U7477/ZN (OAI22D1BWP12TLVT)                             0.07       2.21 r
+  n12877 (net)                                  2         0.00       2.21 r
+  U7770/ZN (AOI21D1BWP12TLVT)                             0.04       2.24 f
+  n12873 (net)                                  1         0.00       2.24 f
+  U18658/ZN (OAI21D1BWP12TLVT)                            0.07       2.32 r
+  n13359 (net)                                  4         0.00       2.32 r
+  U8089/ZN (INVD2BWP12TLVT)                               0.05       2.37 f
+  n12953 (net)                                  7         0.00       2.37 f
+  U8007/ZN (MUX2ND4BWP12TLVT)                             0.10       2.46 r
+  n13361 (net)                                  7         0.00       2.46 r
+  U7315/ZN (INVD2BWP12TLVT)                               0.02       2.48 f
+  n12943 (net)                                  3         0.00       2.48 f
+  U7413/Z (AN2XD1BWP12TLVT)                               0.05       2.54 f
+  n6919 (net)                                   4         0.00       2.54 f
+  U6810/ZN (AOI22D2BWP12TLVT)                             0.04       2.57 r
+  n12902 (net)                                  1         0.00       2.57 r
+  U7103/ZN (OAI221D0BWP12TLVT)                            0.10       2.67 f
+  x_fpu/x_divs/div_394/u_div/PartRem[9][6] (net)
+                                                1         0.00       2.67 f
+  U7102/Z (BUFFD2BWP12TLVT)                               0.07       2.74 f
+  n6536 (net)                                   7         0.00       2.74 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/A[4] (top_DW01_add_93)
+                                                          0.00       2.74 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/A[4] (net)
+                                                          0.00       2.74 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/U54/ZN (NR2D1BWP12TLVT)
+                                                          0.05       2.80 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/n17 (net)
+                                                3         0.00       2.80 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/U55/ZN (OAI21D1BWP12TLVT)
+                                                          0.04       2.84 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/n16 (net)
+                                                2         0.00       2.84 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/U56/ZN (AOI21D1BWP12TLVT)
+                                                          0.04       2.88 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/n9 (net)
+                                                1         0.00       2.88 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/U67/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       2.93 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/CO (net)
+                                                1         0.00       2.93 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_8_2/CO (top_DW01_add_93)
+                                                          0.00       2.93 f
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][8][8] (net)        0.00       2.93 f
+  U17310/ZN (ND2D2BWP12TLVT)                              0.03       2.96 r
+  n13360 (net)                                  4         0.00       2.96 r
+  U17320/ZN (INVD2BWP12TLVT)                              0.03       2.99 f
+  n12978 (net)                                  6         0.00       2.99 f
+  U8213/Z (MUX2D2BWP12TLVT)                               0.10       3.09 r
+  n13357 (net)                                  5         0.00       3.09 r
+  U9063/ZN (INVD2BWP12TLVT)                               0.02       3.11 f
+  n12973 (net)                                  3         0.00       3.11 f
+  U8371/ZN (ND2D1BWP12TLVT)                               0.02       3.14 r
+  n12984 (net)                                  2         0.00       3.14 r
+  U9697/ZN (INVD1BWP12TLVT)                               0.03       3.17 f
+  n12964 (net)                                  6         0.00       3.17 f
+  U8986/ZN (AOI22D0BWP12TLVT)                             0.09       3.26 r
+  n6840 (net)                                   1         0.00       3.26 r
+  U8985/ZN (CKND2D2BWP12TLVT)                             0.06       3.31 f
+  x_fpu/x_divs/div_394/u_div/PartRem[8][6] (net)
+                                                7         0.00       3.31 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/A[4] (top_DW01_add_85)
+                                                          0.00       3.31 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/A[4] (net)
+                                                          0.00       3.31 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/U74/ZN (NR2XD0BWP12TLVT)
+                                                          0.06       3.38 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/n27 (net)
+                                                3         0.00       3.38 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/U93/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       3.43 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/n26 (net)
+                                                2         0.00       3.43 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/U89/ZN (AOI21D2BWP12TLVT)
+                                                          0.05       3.48 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/n16 (net)
+                                                1         0.00       3.48 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/U112/ZN (OAI21D2BWP12TLVT)
+                                                          0.04       3.52 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/n14 (net)
+                                                2         0.00       3.52 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/U68/ZN (IOA21D1BWP12TLVT)
+                                                          0.07       3.59 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/CO (net)
+                                                1         0.00       3.59 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_7_2/CO (top_DW01_add_85)
+                                                          0.00       3.59 f
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][7][10] (net)       0.00       3.59 f
+  U17299/ZN (ND2D2BWP12TLVT)                              0.04       3.63 r
+  n13356 (net)                                  4         0.00       3.63 r
+  U17273/ZN (INVD3BWP12TLVT)                              0.03       3.65 f
+  n13013 (net)                                  6         0.00       3.65 f
+  U17297/Z (MUX2D4BWP12TLVT)                              0.08       3.73 r
+  n13358 (net)                                  5         0.00       3.73 r
+  U17272/ZN (INVD2BWP12TLVT)                              0.02       3.75 f
+  n13008 (net)                                  3         0.00       3.75 f
+  U8009/ZN (ND2D1BWP12TLVT)                               0.03       3.78 r
+  n13016 (net)                                  2         0.00       3.78 r
+  U7926/ZN (CKND2BWP12TLVT)                               0.03       3.82 f
+  n13002 (net)                                  8         0.00       3.82 f
+  U8155/ZN (AOI22D0BWP12TLVT)                             0.07       3.88 r
+  n12996 (net)                                  1         0.00       3.88 r
+  U18726/ZN (ND2D1BWP12TLVT)                              0.08       3.96 f
+  x_fpu/x_divs/div_394/u_div/PartRem[7][6] (net)
+                                                7         0.00       3.96 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/A[4] (top_DW01_add_86)
+                                                          0.00       3.96 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/A[4] (net)
+                                                          0.00       3.96 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/U93/ZN (NR2D1BWP12TLVT)
+                                                          0.06       4.03 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/n44 (net)
+                                                3         0.00       4.03 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/U114/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       4.07 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/n43 (net)
+                                                2         0.00       4.07 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/U92/ZN (AOI21D1BWP12TLVT)
+                                                          0.05       4.12 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/n33 (net)
+                                                1         0.00       4.12 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/U90/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       4.17 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/n31 (net)
+                                                2         0.00       4.17 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/U98/Z (AO21D1BWP12TLVT)
+                                                          0.06       4.23 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/CO (net)
+                                                1         0.00       4.23 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_6_2/CO (top_DW01_add_86)
+                                                          0.00       4.23 f
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][6][12] (net)       0.00       4.23 f
+  U18737/ZN (ND2D1BWP12TLVT)                              0.04       4.27 r
+  n13023 (net)                                  3         0.00       4.27 r
+  U8044/ZN (CKND2BWP12TLVT)                               0.04       4.31 f
+  n13046 (net)                                  6         0.00       4.31 f
+  U17256/Z (MUX2D4BWP12TLVT)                              0.08       4.39 r
+  n13048 (net)                                  4         0.00       4.39 r
+  U6794/ZN (INVD2BWP12TLVT)                               0.02       4.41 f
+  n13041 (net)                                  3         0.00       4.41 f
+  U18738/ZN (ND2D1BWP12TLVT)                              0.03       4.44 r
+  n13053 (net)                                  2         0.00       4.44 r
+  U9694/ZN (INVD2BWP12TLVT)                               0.03       4.47 f
+  n13033 (net)                                 10         0.00       4.47 f
+  U9046/ZN (AOI22D0BWP12TLVT)                             0.09       4.56 r
+  n6821 (net)                                   1         0.00       4.56 r
+  U8975/ZN (CKND2D2BWP12TLVT)                             0.05       4.61 f
+  x_fpu/x_divs/div_394/u_div/PartRem[6][11] (net)
+                                                7         0.00       4.61 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/A[9] (top_DW01_add_108)
+                                                          0.00       4.61 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/A[9] (net)
+                                                          0.00       4.61 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/U117/ZN (CKND2D0BWP12TLVT)
+                                                          0.09       4.70 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/n29 (net)
+                                                3         0.00       4.70 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/U161/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       4.75 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/n22 (net)
+                                                1         0.00       4.75 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/U160/ZN (AOI21D1BWP12TLVT)
+                                                          0.07       4.82 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/n20 (net)
+                                                2         0.00       4.82 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/U162/ZN (OAI21D1BWP12TLVT)
+                                                          0.03       4.85 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/n15 (net)
+                                                1         0.00       4.85 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/U103/Z (AO21D1BWP12TLVT)
+                                                          0.08       4.93 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/CO (net)
+                                                1         0.00       4.93 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_5_1/CO (top_DW01_add_108)
+                                                          0.00       4.93 f
+  x_fpu/x_divs/div_394/u_div/CryTmp[1][5][14] (net)       0.00       4.93 f
+  U8238/Z (AN2D0BWP12TLVT)                                0.05       4.98 f
+  n13058 (net)                                  1         0.00       4.98 f
+  U17314/ZN (MUX2ND0BWP12TLVT)                            0.08       5.06 r
+  n13095 (net)                                  5         0.00       5.06 r
+  U7871/ZN (INVD1BWP12TLVT)                               0.05       5.11 f
+  n13085 (net)                                  3         0.00       5.11 f
+  U18771/ZN (ND2D1BWP12TLVT)                              0.04       5.15 r
+  n13098 (net)                                  2         0.00       5.15 r
+  U17302/ZN (INVD2BWP12TLVT)                              0.03       5.18 f
+  n13076 (net)                                 12         0.00       5.18 f
+  U17270/ZN (AOI22D0BWP12TLVT)                            0.08       5.27 r
+  n13067 (net)                                  1         0.00       5.27 r
+  U18778/ZN (ND2D1BWP12TLVT)                              0.07       5.33 f
+  x_fpu/x_divs/div_394/u_div/PartRem[5][10] (net)
+                                                7         0.00       5.33 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/A[8] (top_DW01_add_88)
+                                                          0.00       5.33 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/A[8] (net)
+                                                          0.00       5.33 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/U127/ZN (NR2D1BWP12TLVT)
+                                                          0.06       5.40 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/n54 (net)
+                                                3         0.00       5.40 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/U150/ZN (OAI21D1BWP12TLVT)
+                                                          0.04       5.44 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/n53 (net)
+                                                2         0.00       5.44 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/U170/ZN (AOI21D1BWP12TLVT)
+                                                          0.06       5.50 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/n39 (net)
+                                                2         0.00       5.50 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/U190/ZN (OAI21D1BWP12TLVT)
+                                                          0.03       5.53 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/n17 (net)
+                                                1         0.00       5.53 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/U137/Z (AO21D1BWP12TLVT)
+                                                          0.09       5.62 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/CO (net)
+                                                1         0.00       5.62 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_4_2/CO (top_DW01_add_88)
+                                                          0.00       5.62 f
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][4][16] (net)       0.00       5.62 f
+  U6809/ZN (ND3D2BWP12TLVT)                               0.03       5.65 r
+  n13353 (net)                                  5         0.00       5.65 r
+  U7475/ZN (INVD1BWP12TLVT)                               0.03       5.68 f
+  n13149 (net)                                  3         0.00       5.68 f
+  U17319/Z (MUX2D4BWP12TLVT)                              0.08       5.77 r
+  n13355 (net)                                  7         0.00       5.77 r
+  U17247/ZN (ND2D0BWP12TLVT)                              0.05       5.82 f
+  n13143 (net)                                  2         0.00       5.82 f
+  U7408/ZN (INVD1BWP12TLVT)                               0.07       5.89 r
+  n13131 (net)                                 14         0.00       5.89 r
+  U17268/ZN (AOI22D0BWP12TLVT)                            0.07       5.96 f
+  n13120 (net)                                  1         0.00       5.96 f
+  U9705/Z (AN2XD1BWP12TLVT)                               0.05       6.01 f
+  n6869 (net)                                   2         0.00       6.01 f
+  U7828/ZN (INVD1BWP12TLVT)                               0.04       6.05 r
+  n9904 (net)                                   5         0.00       6.05 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/A[8] (top_DW01_add_89)
+                                                          0.00       6.05 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/A[8] (net)
+                                                          0.00       6.05 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U144/ZN (NR2D1BWP12TLVT)
+                                                          0.03       6.08 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/n64 (net)
+                                                2         0.00       6.08 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U162/Z (CKBD1BWP12TLVT)
+                                                          0.05       6.13 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/n175 (net)
+                                                2         0.00       6.13 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U187/ZN (NR2D1BWP12TLVT)
+                                                          0.05       6.18 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/n62 (net)
+                                                2         0.00       6.18 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U153/ZN (ND2D1BWP12TLVT)
+                                                          0.04       6.21 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/n48 (net)
+                                                2         0.00       6.21 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U184/ZN (NR2D1BWP12TLVT)
+                                                          0.04       6.25 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/n21 (net)
+                                                1         0.00       6.25 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U147/ZN (AOI21D1BWP12TLVT)
+                                                          0.04       6.29 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/n20 (net)
+                                                2         0.00       6.29 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/U170/ZN (OAI21D1BWP12TLVT)
+                                                          0.04       6.33 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/CO (net)
+                                                1         0.00       6.33 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_3_2/CO (top_DW01_add_89)
+                                                          0.00       6.33 r
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][3][18] (net)       0.00       6.33 r
+  U18823/ZN (ND2D1BWP12TLVT)                              0.05       6.39 f
+  n13354 (net)                                  4         0.00       6.39 f
+  U8432/ZN (INVD2BWP12TLVT)                               0.04       6.43 r
+  n13208 (net)                                  5         0.00       6.43 r
+  U17298/Z (MUX2D4BWP12TLVT)                              0.09       6.52 f
+  n13349 (net)                                  6         0.00       6.52 f
+  U8185/ZN (INVD2BWP12TLVT)                               0.03       6.54 r
+  n13200 (net)                                  3         0.00       6.54 r
+  U18824/ZN (ND2D1BWP12TLVT)                              0.04       6.58 f
+  n13212 (net)                                  2         0.00       6.58 f
+  U6649/ZN (INVD2BWP12TLVT)                               0.05       6.64 r
+  n13192 (net)                                 16         0.00       6.64 r
+  U17243/ZN (AOI22D0BWP12TLVT)                            0.06       6.70 f
+  n13171 (net)                                  1         0.00       6.70 f
+  U18835/ZN (ND2D1BWP12TLVT)                              0.05       6.75 r
+  x_fpu/x_divs/div_394/u_div/PartRem[3][15] (net)
+                                                7         0.00       6.75 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/A[13] (top_DW01_add_95)
+                                                          0.00       6.75 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/A[13] (net)
+                                                          0.00       6.75 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/U228/ZN (NR2D0BWP12TLVT)
+                                                          0.03       6.78 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/n53 (net)
+                                                2         0.00       6.78 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/U215/ZN (NR2D0BWP12TLVT)
+                                                          0.08       6.86 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/n46 (net)
+                                                2         0.00       6.86 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/U192/ZN (ND2D0BWP12TLVT)
+                                                          0.06       6.92 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/n44 (net)
+                                                2         0.00       6.92 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/U238/ZN (OAI21D1BWP12TLVT)
+                                                          0.06       6.98 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/n43 (net)
+                                                1         0.00       6.98 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/U164/ZN (AOI21D2BWP12TLVT)
+                                                          0.03       7.01 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/n41 (net)
+                                                2         0.00       7.01 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/U171/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       7.06 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/CO (net)
+                                                1         0.00       7.06 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_2_2/CO (top_DW01_add_95)
+                                                          0.00       7.06 r
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][2][20] (net)       0.00       7.06 r
+  U17301/ZN (ND2D2BWP12TLVT)                              0.04       7.10 f
+  n13348 (net)                                  4         0.00       7.10 f
+  U17318/ZN (INVD2BWP12TLVT)                              0.04       7.14 r
+  n13271 (net)                                  5         0.00       7.14 r
+  U17317/Z (MUX2D4BWP12TLVT)                              0.09       7.22 f
+  n13350 (net)                                  6         0.00       7.22 f
+  U18869/ZN (CKND1BWP12TLVT)                              0.04       7.26 r
+  n13263 (net)                                  3         0.00       7.26 r
+  U18870/ZN (ND2D1BWP12TLVT)                              0.05       7.31 f
+  n13275 (net)                                  2         0.00       7.31 f
+  U17321/ZN (INVD3BWP12TLVT)                              0.05       7.36 r
+  n13253 (net)                                 18         0.00       7.36 r
+  U17219/ZN (AOI22D0BWP12TLVT)                            0.06       7.42 f
+  n13238 (net)                                  1         0.00       7.42 f
+  U9862/ZN (ND2D1BWP12TLVT)                               0.05       7.47 r
+  x_fpu/x_divs/div_394/u_div/PartRem[2][12] (net)
+                                                7         0.00       7.47 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/A[10] (top_DW01_add_105)
+                                                          0.00       7.47 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/A[10] (net)
+                                                          0.00       7.47 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/U210/ZN (NR2XD0BWP12TLVT)
+                                                          0.05       7.52 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/n87 (net)
+                                                3         0.00       7.52 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/U276/ZN (NR2D1BWP12TLVT)
+                                                          0.06       7.57 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/n85 (net)
+                                                2         0.00       7.57 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/U201/ZN (CKND2D0BWP12TLVT)
+                                                          0.07       7.64 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/n83 (net)
+                                                2         0.00       7.64 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/U253/ZN (NR2D1BWP12TLVT)
+                                                          0.05       7.69 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/n56 (net)
+                                                1         0.00       7.69 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/U252/ZN (AOI21D1BWP12TLVT)
+                                                          0.04       7.73 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/n55 (net)
+                                                2         0.00       7.73 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/U238/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       7.78 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/CO (net)
+                                                2         0.00       7.78 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_1_2/CO (top_DW01_add_105)
+                                                          0.00       7.78 r
+  x_fpu/x_divs/div_394/u_div/CryTmp[2][1][22] (net)       0.00       7.78 r
+  U10933/ZN (ND2D1BWP12TLVT)                              0.05       7.83 f
+  n13284 (net)                                  4         0.00       7.83 f
+  U17258/Z (AO32D2BWP12TLVT)                              0.13       7.96 f
+  n13340 (net)                                  5         0.00       7.96 f
+  U7403/ZN (INVD1BWP12TLVT)                               0.04       8.01 r
+  n13330 (net)                                  3         0.00       8.01 r
+  U8034/ZN (ND2D1BWP12TLVT)                               0.04       8.05 f
+  n13341 (net)                                  2         0.00       8.05 f
+  U9869/ZN (INVD2BWP12TLVT)                               0.06       8.11 r
+  n13323 (net)                                 20         0.00       8.11 r
+  U8428/ZN (AOI22D0BWP12TLVT)                             0.06       8.17 f
+  n13316 (net)                                  1         0.00       8.17 f
+  U7424/ZN (ND2D1BWP12TLVT)                               0.04       8.21 r
+  x_fpu/x_divs/div_394/u_div/PartRem[1][8] (net)
+                                                4         0.00       8.21 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/A[6] (top_DW01_add_106)
+                                                          0.00       8.21 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/A[6] (net)
+                                                          0.00       8.21 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/U202/ZN (NR2XD0BWP12TLVT)
+                                                          0.03       8.24 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/n121 (net)
+                                                2         0.00       8.24 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/U219/ZN (NR2D0BWP12TLVT)
+                                                          0.08       8.32 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/n119 (net)
+                                                2         0.00       8.32 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/U212/ZN (CKND2D0BWP12TLVT)
+                                                          0.06       8.38 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/n117 (net)
+                                                1         0.00       8.38 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/U255/ZN (OAI21D1BWP12TLVT)
+                                                          0.05       8.42 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/n116 (net)
+                                                1         0.00       8.42 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/U253/ZN (AOI21D1BWP12TLVT)
+                                                          0.03       8.45 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/n66 (net)
+                                                1         0.00       8.45 f
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/U280/ZN (OAI21D1BWP12TLVT)
+                                                          0.04       8.49 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/CO (net)
+                                                1         0.00       8.49 r
+  x_fpu/x_divs/div_394/u_div/u_add_PartRem_1_0_1/CO (top_DW01_add_106)
+                                                          0.00       8.49 r
+  x_fpu/x_divs/div_394/u_div/CryTmp[1][0][24] (net)       0.00       8.49 r
+  U18954/ZN (OAI31D1BWP12TLVT)                            0.04       8.54 f
+  n16638 (net)                                  3         0.00       8.54 f
+  U7708/ZN (CKND1BWP12TLVT)                               0.04       8.57 r
+  n13384 (net)                                  3         0.00       8.57 r
+  U17252/ZN (OAI211D1BWP12TLVT)                           0.05       8.63 f
+  n13382 (net)                                  2         0.00       8.63 f
+  U17329/ZN (INVD1BWP12TLVT)                              0.04       8.67 r
+  n13380 (net)                                  2         0.00       8.67 r
+  U7523/ZN (ND2D1BWP12TLVT)                               0.04       8.71 f
+  n13379 (net)                                  2         0.00       8.71 f
+  U17253/ZN (INVD1BWP12TLVT)                              0.03       8.73 r
+  n13378 (net)                                  2         0.00       8.73 r
+  U18955/ZN (ND2D1BWP12TLVT)                              0.03       8.76 f
+  n13377 (net)                                  2         0.00       8.76 f
+  U8208/ZN (INVD1BWP12TLVT)                               0.03       8.79 r
+  n13376 (net)                                  2         0.00       8.79 r
+  U18956/ZN (ND2D1BWP12TLVT)                              0.03       8.82 f
+  n13375 (net)                                  2         0.00       8.82 f
+  U18957/ZN (CKND1BWP12TLVT)                              0.03       8.85 r
+  n13374 (net)                                  2         0.00       8.85 r
+  U18958/ZN (ND2D1BWP12TLVT)                              0.03       8.89 f
+  n13372 (net)                                  2         0.00       8.89 f
+  U8365/ZN (INVD1BWP12TLVT)                               0.03       8.91 r
+  n13371 (net)                                  2         0.00       8.91 r
+  U7599/ZN (ND2D1BWP12TLVT)                               0.03       8.95 f
+  n13370 (net)                                  3         0.00       8.95 f
+  U8035/Z (XOR2D1BWP12TLVT)                               0.09       9.03 f
+  x_fpu/x_divs/N52 (net)                        4         0.00       9.03 f
+  sub_1_root_x_fpu/x_divs/add_403_3/A[7] (top_DW01_sub_60)
+                                                          0.00       9.03 f
+  sub_1_root_x_fpu/x_divs/add_403_3/A[7] (net)            0.00       9.03 f
+  sub_1_root_x_fpu/x_divs/add_403_3/U105/ZN (NR2D1BWP12TLVT)
+                                                          0.06       9.09 r
+  sub_1_root_x_fpu/x_divs/add_403_3/n12 (net)
+                                                3         0.00       9.09 r
+  sub_1_root_x_fpu/x_divs/add_403_3/U94/ZN (OAI21D1BWP12TLVT)
+                                                          0.04       9.13 f
+  sub_1_root_x_fpu/x_divs/add_403_3/n11 (net)
+                                                1         0.00       9.13 f
+  sub_1_root_x_fpu/x_divs/add_403_3/U75/ZN (AOI21D1BWP12TLVT)
+                                                          0.06       9.18 r
+  sub_1_root_x_fpu/x_divs/add_403_3/n9 (net)
+                                                1         0.00       9.18 r
+  sub_1_root_x_fpu/x_divs/add_403_3/U74/Z (XOR2D0BWP12TLVT)
+                                                          0.08       9.27 f
+  sub_1_root_x_fpu/x_divs/add_403_3/DIFF[8] (net)
+                                                1         0.00       9.27 f
+  sub_1_root_x_fpu/x_divs/add_403_3/DIFF[8] (top_DW01_sub_60)
+                                                          0.00       9.27 f
+  x_fpu/x_divs/N71 (net)                                  0.00       9.27 f
+  U19968/Z (AO21D1BWP12TLVT)                              0.09       9.36 f
+  n14697 (net)                                  2         0.00       9.36 f
+  U7765/ZN (AOI32D2BWP12TLVT)                             0.05       9.42 r
+  n14535 (net)                                  1         0.00       9.42 r
+  U8184/ZN (OAI211D2BWP12TLVT)                            0.07       9.48 f
+  n14796 (net)                                  5         0.00       9.48 f
+  U9241/ZN (CKND1BWP12TLVT)                               0.04       9.53 r
+  n14866 (net)                                  3         0.00       9.53 r
+  U6811/ZN (OAI21D2BWP12TLVT)                             0.04       9.57 f
+  n14843 (net)                                  2         0.00       9.57 f
+  U8005/ZN (AOI221D2BWP12TLVT)                            0.11       9.68 r
+  n14846 (net)                                  1         0.00       9.68 r
+  U8480/ZN (OAI221D1BWP12TLVT)                            0.08       9.76 f
+  n14857 (net)                                  1         0.00       9.76 f
+  U20194/Z (OR4D1BWP12TLVT)                               0.13       9.89 f
+  x_fpu/N468 (net)                              1         0.00       9.89 f
+  x_fpu/result64_reg[29]/U3/Z (MUX2D0BWP12TLVT)           0.10       9.98 f
+  n7238 (net)                                   1         0.00       9.98 f
+  x_fpu/result64_reg[29]/D (DFQD1BWP12TLVT)               0.00       9.98 f
+  data arrival time                                                  9.98
+
+  clock CPU_CLOCK (rise edge)                            10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  x_fpu/result64_reg[29]/CP (DFQD1BWP12TLVT)              0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -9.98
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+1

@@ -1,0 +1,28 @@
+set ucliGUI::state
+set ucliGUI::state
+ucliCore::getToolPID
+synopsys::env hasTB
+trigger_hier_stack_context_switch 0
+synopsys::xml set_array_limit <data limit="50" />
+synopsys::xml set_depth_limit <data limit="100" />
+synopsys::xml set_string_limit <data limit="1000" />
+synopsys::xml set_only_active_frame <data value="1" />
+synopsys::xml set_variable_frame_id <data value="1" />
+synUtils::setDVEInitPhase 1
+synopsys::dump -type VPD -file /mnt/hgfs/SF/FPU/Processor/verification/target/inter.vpd -locking
+synopsys::dump -autoflush on -fid VPD0
+synUtils::setDVEInitPhase 0
+ucliCore::getToolPID
+synUtils::sendTool -active {_icl_start_rpc -version "G-2012.09"}
+set ::dve_fid VPD0
+config endofsim noexit
+config onfail enable all
+synopsys::listing -disable
+synopsys::dump -add {tb.x_processor.addps tb.x_processor.adds tb.x_processor.argument tb.x_processor.cpu_clock tb.x_processor.cpu_reset_b tb.x_processor.cvtpss tb.x_processor.cvtspl tb.x_processor.cvtspu tb.x_processor.cvtsw tb.x_processor.cvtws tb.x_processor.data_FPR tb.x_processor.data_GPR tb.x_processor.data_access_req tb.x_processor.data_address tb.x_processor.divs tb.x_processor.exception tb.x_processor.fd tb.x_processor.fmt tb.x_processor.fmt_ps tb.x_processor.fmt_s tb.x_processor.fmt_w tb.x_processor.fpu_instr tb.x_processor.fs tb.x_processor.ft tb.x_processor.func tb.x_processor.func_add tb.x_processor.func_cvtps tb.x_processor.func_cvts tb.x_processor.func_cvtspl tb.x_processor.func_cvtspu tb.x_processor.func_cvtw tb.x_processor.func_div tb.x_processor.func_mul tb.x_processor.func_sub tb.x_processor.idle tb.x_processor.imm tb.x_processor.ins_fetch_req tb.x_processor.ins_pc tb.x_processor.instruction tb.x_processor.mfc1 tb.x_processor.mtc1 tb.x_processor.mulps tb.x_processor.muls tb.x_processor.op_cop1 tb.x_processor.op_lui tb.x_processor.op_ori tb.x_processor.opcode tb.x_processor.rdata tb.x_processor.rdata_temp tb.x_processor.result tb.x_processor.rs tb.x_processor.rt tb.x_processor.subps tb.x_processor.subs tb.x_processor.wdata tb.x_processor.wen } -aggregates  -fid VPD0
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" />}

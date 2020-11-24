@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE cov SYSTEM "ucdb_srcinfo.dtd">
+  <srcinfo name="/mnt/hgfs/SF/FPU/Processor/verification/target"  >
+    <ucapi_version  major_ver="13"  minor_ver="1"  patch_str="G-2012.09"  />
+      <fileinfo name="/mnt/hgfs/SF/FPU/Processor//rtl/processor/fpu.v"  id="2"  />
+      <fileinfo name="/mnt/hgfs/SF/FPU/Processor//testbench/tb.v"  id="0"  />
+      <fileinfo name="/mnt/hgfs/SF/FPU/Processor//rtl/processor/processor.v"  id="1"  />
+      <fileinfo name="/mnt/hgfs/SF/FPU/Processor//testbench/memory.v"  id="3"  />
+    </srcinfo>

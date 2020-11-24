@@ -1,0 +1,29 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: G-2012.06-SP2
+Date   : Fri Nov  6 21:19:44 2020
+****************************************
+
+Library(s) Used:
+
+    tcbn65lpbwp12tlvtwc (File: /mnt/hgfs/SF/FPU/Processor/synthesis/std_lib/tcbn65lpbwp12tlvtwc.db)
+
+Number of ports:                            2
+Number of nets:                         21049
+Number of cells:                        19140
+Number of combinational cells:          15699
+Number of sequential cells:              3354
+Number of macros:                           0
+Number of buf/inv:                       4112
+Number of references:                     319
+
+Combinational area:       106087.200772
+Buf/Inv area:             10240.320114
+Noncombinational area:    31003.199633
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:          137090.400405
+Total area:                 undefined
+1

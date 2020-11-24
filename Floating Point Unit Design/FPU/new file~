@@ -1,0 +1,5 @@
+#!/bin/tcsh
+cd Processor/environment
+source setup.csh
+cd Processor/verification
+run stimulus.pat

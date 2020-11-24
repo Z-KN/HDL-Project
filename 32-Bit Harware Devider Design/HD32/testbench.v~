@@ -1,0 +1,31 @@
+//`include "HD32.v"
+module testbench;
+
+// input
+reg[32-1:0] i_dividend;
+reg[32-1:0] i_divider;
+// output
+wire[32-1:0] o_quotient;
+wire[32-1:0] o_remainder;
+
+//HD32 HD32(i_dividend,i_divider,o_quotient,o_remainder);
+
+initial
+begin
+    $monitor($time," dividend=%b,divider=%b,quotient=%b,remainder=%b\n",
+    i_dividend,i_divider,o_quotient,o_remainder);
+end
+
+initial
+begin
+    i_dividend=32'b1010;
+    i_divider=32'b0010;
+    $display("i_dividend=%d",i_dividend);
+    $display("i_divider=%d",i_divider);
+    #5;
+    i_dividend=32'b1110;
+    i_divider=32'b0010;
+    #5 $finish;
+end
+endmodule
+

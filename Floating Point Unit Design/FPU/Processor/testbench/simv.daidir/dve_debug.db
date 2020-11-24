@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<opml version="1.0">
+	<head>
+		<title>VCS dump file for DVE debugging</title>
+		<vcsVersion>G-2012.09_Full64</vcsVersion>
+		<dateCreated>Wed Oct 28 21:00:50 2020</dateCreated>
+	</head>
+	<body>
+		<!-- VCS compile options -->
+		<vcsCompileOptions text="/tools/synopsys/vcs_vG-2012.09/amd64/bin/vcs1 -Mcc=g++ -Mcplusplus=g++ -Masflags= -Mcfl= -pipe -O -I/tools/synopsys/vcs_vG-2012.09/include  -Mldflags=  -Mout=simv -Mamsrun= -Mvcsaceobjs= -Mobjects= /tools/synopsys/vcs_vG-2012.09/amd64/lib/libvirsim.so /tools/synopsys/vcs_vG-2012.09/amd64/lib/liberrorinf.so /tools/synopsys/vcs_vG-2012.09/amd64/lib/libsnpsmalloc.so  -Msaverestoreobj=/tools/synopsys/vcs_vG-2012.09/amd64/lib/vcs_save_restore_new.o -Mcrt0= -Mcrtn= -Mcsrc= -Msyslibs=-ldl -lm  -full64 -gui -ucli +cli+4 +vcsd +itf+/tools/synopsys/vcs_vG-2012.09/amd64/lib/vcsd.tab +vpi -debug=3 +memcbk -sverilog +vpi -gen_obj tb.v memory.v ../rtl/processor/processor.v "/>
+		<!-- File list for the whole design -->
+		<fileList>
+			<file fid="0" path="/mnt/hgfs/SF/FPU/Processor/testbench/memory.v" />
+			<file fid="1" path="/mnt/hgfs/SF/FPU/Processor/rtl/processor/processor.v" />
+			<file fid="2" path="/mnt/hgfs/SF/FPU/Processor/testbench/tb.v" />
+		</fileList>
+		<!-- Include file list for the whole design -->
+		<includeFileList>
+		</includeFileList>
+		<!-- Encrypted codes list for the whole design -->
+		<encryptedCodesList>
+		</encryptedCodesList>
+		<!-- Inactive codes list for the whole design -->
+		<inactiveCodesList>
+		</inactiveCodesList>
+		<!-- Compile options UUM based -->
+		<langKeywords>
+			<svFiles fid="0-2" />
+		</langKeywords>
+		<!--  Case insensitive file list -->
+		<caseInsensitiveFiles fid="" />
+		<!-- Macro definition list for the whole design --> 
+		<macroDefinitionList>
+			<macro name="CLK_PERIOD" module="unnamed$$_1" sourceID="2" lineno="24" defID="2" defLine="1" value="1"  vip="false"/>
+			<macro name="MAX_RUN_TIME" module="unnamed$$_7" sourceID="2" lineno="77" defID="2" defLine="2" value="2"  vip="false"/>
+		</macroDefinitionList>
+		<!-- Macro value list for the whole design --> 
+		<macroValueList>
+			<mv i="1" n="10" />
+			<mv i="2" n="100000 " />
+		</macroValueList>
+	</body>
+</opml>

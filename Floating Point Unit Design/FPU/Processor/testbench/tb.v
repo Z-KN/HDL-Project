@@ -1,0 +1,161 @@
+`define CLK_PERIOD          10
+`define MAX_RUN_TIME        600
+`timescale 1ns/100ps
+
+module tb();
+reg clk;
+reg rst_b;
+
+wire        ins_fetch_req;
+wire [31:0] ins_pc;
+wire [31:0] instruction;
+wire        data_access_req;
+wire [31:0] data_address;
+wire        wen;
+wire [31:0] wdata;
+wire [31:0] rdata;
+wire [3:0]  instr; 
+wire [4:0]  argument[2:0]; 
+wire [31:0] result;
+wire        exception;
+wire [31:0] data_GPR;
+wire [31:0] data_FPR;
+
+//==============================================================================
+// Clock Generator
+//==============================================================================
+initial
+begin
+  clk = 0;
+  forever begin
+    #(`CLK_PERIOD/2) clk = ~clk;
+  end
+end
+
+//==============================================================================
+// Reset Generator
+//==============================================================================
+initial
+begin
+  rst_b = 1;
+  #100;
+  rst_b = 0;
+  #100 
+  rst_b = 1;
+
+  $display("**********************************************");
+  $display("*     reset finish!!! case run!!!!           *");
+  $display("**********************************************");
+end
+
+//==============================================================================
+// Memory Initialization  
+//==============================================================================
+// initial instruciton memory
+reg [31:0] mem_temp [integer];
+integer i;
+initial
+begin
+  $readmemh("case.pat", mem_temp);
+    $display("mem_temp.size=%d",mem_temp.size);
+  for(i=0;i<=mem_temp.size;i=i+1)
+  begin
+    //initial for instruction memory
+    x_ins_memory.data_cell[i][31:0] = mem_temp[i][31:0];
+    $display("x_ins_memory.data_cell[%d]=%x",i,x_ins_memory.data_cell[i][31:0]);
+  end
+end
+
+//initial data memory
+integer j;
+initial
+begin
+  for(j=0;j<=31;j=j+1)
+  begin
+    //initial for data memory
+    x_data_memory.data_cell[j][31:0] = 32'b0;
+  end
+end
+
+//==============================================================================
+// Simulation Finish
+//==============================================================================
+// 1. Reaching the max simulation time.
+initial
+begin
+  # `MAX_RUN_TIME;
+  $display("**********************************************");
+  $display("*   meeting max simulation time, stop!       *");
+  $display("**********************************************");
+$finish;
+end
+/*
+// 2. run to exit label
+// when execution a store instruction that the data is 32'hffffffff
+initial
+begin
+  if(data_access_req && wen && wdata[31:0]==32'hffffffff)
+  begin
+    #100;
+    $finish;
+  end
+end
+*/
+initial
+begin
+  $dumpfile("test.vcd");
+  $dumpvars;
+end
+
+//==============================================================================
+// Instance processor
+//==============================================================================
+processor x_processor(
+  .cpu_clock        (clk                  ),
+  .cpu_reset_b      (rst_b                ),
+  .ins_fetch_req    (ins_fetch_req        ),
+  .ins_pc           (ins_pc               ),
+  .instruction      (instruction          ),  
+  .data_access_req  (data_access_req      ),
+  .data_address     (data_address         ),
+  .wen              (wen                  ),
+  .wdata            (wdata                ),
+  .rdata            (rdata                ),
+  .fpu_instr        (instr                ),
+  .argument         (argument             ),
+  .result           (result               ),
+  .exception        (exception            ),
+  .data_GPR         (data_GPR             ),
+  .data_FPR         (data_FPR             )
+);
+
+memory x_ins_memory(
+  .clock            (clk                  ), 
+  .sel              (ins_fetch_req        ),
+  .addr             (ins_pc               ),
+  .wen              (1'b0                 ),
+  .wdata            (32'b0                ),
+  .rdata            (instruction          )
+);
+
+memory x_data_memory(
+  .clock            (clk                  ),
+  .sel              (data_access_req      ),
+  .addr             (data_address         ),
+  .wen              (wen                  ),
+  .wdata            (wdata                ),
+  .rdata            (rdata                )
+);
+
+fpu x_fpu(
+  .fpu_clock        (clk                  ),
+  .fpu_reset_b      (rst_b                ),
+  .fpu_instr        (instr                ),
+  .argument         (argument             ),
+  .result           (result               ),
+  .exception        (exception            ),
+  .data_GPR         (data_GPR             ),
+  .data_FPR         (data_FPR             )
+);
+
+endmodule

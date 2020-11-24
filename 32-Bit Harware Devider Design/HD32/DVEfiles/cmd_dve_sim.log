@@ -1,0 +1,13 @@
+set ucliGUI::state
+set ucliGUI::state
+ucliCore::getToolPID
+synopsys::env hasTB
+trigger_hier_stack_context_switch 0
+synUtils::setDVEInitPhase 1
+synopsys::dump -type VPD -file /mnt/hgfs/SF CentOS EDA/HD32/inter.vpd -locking
+synUtils::setDVEInitPhase 0
+synopsys::finish
+set ucliGUI::state
+set ucliGUI::state
+if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+ucli_exit

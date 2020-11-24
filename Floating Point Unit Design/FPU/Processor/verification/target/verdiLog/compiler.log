@@ -1,0 +1,36 @@
+*design* DebussyLib (btIdent Verdi3_I-2014.03)
+Command arguments:
+    +define+verilog
+    /home/edauser/Processor/testbench/tb.v
+
+
+*Error* Syntax error at ]
+"/home/edauser/Processor/testbench/tb.v", 48: 
+Highest level modules:
+tb
+
+
+*Error* failed to find identifier mem_temp
+"/home/edauser/Processor/testbench/tb.v", 52: 
+
+*Error* failed to find identifier mem_temp.size
+"/home/edauser/Processor/testbench/tb.v", 53: 
+
+*Error* failed to find identifier x_ins_memory.data_cell[i][31:0]
+"/home/edauser/Processor/testbench/tb.v", 56: 
+
+*Error* failed to find identifier mem_temp[i][31:0]
+"/home/edauser/Processor/testbench/tb.v", 56: 
+
+*Error* failed to find identifier x_data_memory.data_cell[j][31:0]
+"/home/edauser/Processor/testbench/tb.v", 67: 
+
+*Error* view processor is not defined for instance x_processor
+"/home/edauser/Processor/testbench/tb.v", 104: 
+
+*Error* view memory is not defined for instance x_ins_memory
+"/home/edauser/Processor/testbench/tb.v", 117: 
+
+*Error* view memory is not defined for instance x_data_memory
+"/home/edauser/Processor/testbench/tb.v", 126: 
+Total	9 error(s),   0 warning(s)

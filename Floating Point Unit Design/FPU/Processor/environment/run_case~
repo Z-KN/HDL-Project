@@ -1,0 +1,50 @@
+#! /usr/bin/perl -w
+
+use Getopt::Long;
+    $Getopt::Long::ignorecase = 0;
+use File::Copy;
+use Cwd;
+use FileHandle;
+use File::Basename;
+use Term::ANSIColor;
+use strict;
+no strict 'refs';
+
+my $JAGUAR_PATH = `pwd`;
+chomp($JAGUAR_PATH);
+$JAGUAR_PATH =~ s/Processor.*/Processor\//;
+
+#=======================================================
+# Step1: Process the command line arguments
+#========================================================
+my %Opt;
+if(!&GetOptions
+        (\%Opt
+              ))
+{
+        &print_usage();
+        exit(1);
+}
+
+#Selecte the specified case
+my $case;
+foreach(@ARGV){
+	if(/(.*\/)(.*)/){
+		$case = $2;
+	}else{
+		$case = $_;
+	}
+        !system("cp $case $JAGUAR_PATH/verification/target/case.pat") or die "can't copy $case";
+}
+print "\nStep1 (Process the command line arguments) is finished!\n";
+
+#=======================================================
+# Step2: Run VCS
+#========================================================
+  my $work = "$JAGUAR_PATH\/verification/target";
+  chdir($work);
+
+!system("vcs +v2k -Mupdate -sverilog $JAGUAR_PATH/testbench/tb.v $JAGUAR_PATH/rtl/processor/processor.v $JAGUAR_PATH/rtl/processor/fpu.v -y $JAGUAR_PATH/testbench/ -y $JAGUAR_PATH/rtl/processor/ +libext+.v+.h -R -q -debug_all -cm line+cond+fsm+branch+tgl ; ./simv -gui -cm line+cond+fsm+branch+tgl ; dve -covdir simv.vdb") or die "can't run VCS";
+
+print "\nStep2 (Run VCS) is finished\n";
+

@@ -1,0 +1,1032 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version G-2012.06-SP2 for RHEL64 -- Aug 31, 2012
+               Copyright (c) 1988-2012 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+#===========================================================
+# set synthesis library
+# 1. standard cell library
+# 2. memory library if necessary
+# 3. designware library if necessary
+#===========================================================
+#memory library path
+set memory_lib_path ../memory_lib/ 
+../memory_lib/
+set memory_lib [list     $memory_lib_path/sprf065lp_1024x32_ss.db     $memory_lib_path/sprf065lp_128x21_ss.db     $memory_lib_path/sprf065lp_128x88_ss.db     $memory_lib_path/sprf065lp_128x8_ss.db     $memory_lib_path/sprf065lp_256x49_ss.db     $memory_lib_path/sprf065lp_256x64_ss.db     $memory_lib_path/sprf065lp_256x84_ss.db     $memory_lib_path/sprf065lp_256x88_ss.db     $memory_lib_path/sprf065lp_256x8_ss.db     $memory_lib_path/sprf065lp_512x32_ss.db     $memory_lib_path/sprf065lp_512x38_ss.db     $memory_lib_path/sprf065lp_512x40_ss.db     $memory_lib_path/sprf065lp_512x49_ss.db     $memory_lib_path/sprf065lp_512x62_ss.db     $memory_lib_path/sprf065lp_512x64_ss.db     $memory_lib_path/sprf065lp_512x8_ss.db     $memory_lib_path/sprf065lp_64x52_ss.db     $memory_lib_path/sprf065lp_64x59_ss.db     $memory_lib_path/sprf065lp_64x71_ss.db     $memory_lib_path/sprf065lp_64x8_ss.db \  
+                ]
+../memory_lib//sprf065lp_1024x32_ss.db ../memory_lib//sprf065lp_128x21_ss.db ../memory_lib//sprf065lp_128x88_ss.db ../memory_lib//sprf065lp_128x8_ss.db ../memory_lib//sprf065lp_256x49_ss.db ../memory_lib//sprf065lp_256x64_ss.db ../memory_lib//sprf065lp_256x84_ss.db ../memory_lib//sprf065lp_256x88_ss.db ../memory_lib//sprf065lp_256x8_ss.db ../memory_lib//sprf065lp_512x32_ss.db ../memory_lib//sprf065lp_512x38_ss.db ../memory_lib//sprf065lp_512x40_ss.db ../memory_lib//sprf065lp_512x49_ss.db ../memory_lib//sprf065lp_512x62_ss.db ../memory_lib//sprf065lp_512x64_ss.db ../memory_lib//sprf065lp_512x8_ss.db ../memory_lib//sprf065lp_64x52_ss.db ../memory_lib//sprf065lp_64x59_ss.db ../memory_lib//sprf065lp_64x71_ss.db ../memory_lib//sprf065lp_64x8_ss.db { }
+#standard cell library
+set std_lib ../std_lib/tcbn65lpbwp12tlvtwc.db 
+../std_lib/tcbn65lpbwp12tlvtwc.db
+#designware foundation library
+set dw_lib  ../dw_lib/dw_foundation.sldb 
+../dw_lib/dw_foundation.sldb
+#set target library (use to optimization)
+set target_library [list $std_lib]
+../std_lib/tcbn65lpbwp12tlvtwc.db
+#set link library (used to implementation)
+set link_library   { * }
+ * 
+append link_library $memory_lib " " $std_lib " " $dw_lib
+ * ../memory_lib//sprf065lp_1024x32_ss.db ../memory_lib//sprf065lp_128x21_ss.db ../memory_lib//sprf065lp_128x88_ss.db ../memory_lib//sprf065lp_128x8_ss.db ../memory_lib//sprf065lp_256x49_ss.db ../memory_lib//sprf065lp_256x64_ss.db ../memory_lib//sprf065lp_256x84_ss.db ../memory_lib//sprf065lp_256x88_ss.db ../memory_lib//sprf065lp_256x8_ss.db ../memory_lib//sprf065lp_512x32_ss.db ../memory_lib//sprf065lp_512x38_ss.db ../memory_lib//sprf065lp_512x40_ss.db ../memory_lib//sprf065lp_512x49_ss.db ../memory_lib//sprf065lp_512x62_ss.db ../memory_lib//sprf065lp_512x64_ss.db ../memory_lib//sprf065lp_512x8_ss.db ../memory_lib//sprf065lp_64x52_ss.db ../memory_lib//sprf065lp_64x59_ss.db ../memory_lib//sprf065lp_64x71_ss.db ../memory_lib//sprf065lp_64x8_ss.db { } ../std_lib/tcbn65lpbwp12tlvtwc.db ../dw_lib/dw_foundation.sldb
+#===========================================================
+# setup work directory              
+#===========================================================
+sh rm -rf work
+sh rm -rf cache
+sh mkdir work
+sh mkdir -p cache/SYN
+sh rm -rf syn_result
+sh mkdir syn_result
+define_design_lib work -path ./work/
+1
+set cache_read  "./cache/SYN"
+./cache/SYN
+set cache_write "./cache/SYN"
+./cache/SYN
+set mgi_scratch_directory "./cache/designware_generator"
+./cache/designware_generator
+#===========================================================
+# setup RTL code
+#===========================================================
+#set top module
+set TOP_MODULE top 
+top
+#get rtl synthesis filelist
+set SYN_RTL_FILES [sh ls ../../rtl/processor/*.v ../../testbench/memory.v ]
+../../rtl/processor/fpu.v
+../../rtl/processor/para_instr.v
+../../rtl/processor/processor.v
+../../testbench/memory.v
+analyze -f sverilog $SYN_RTL_FILES
+Running PRESTO HDLC
+Compiling source file ../../rtl/processor/fpu.v
+Compiling source file ../../rtl/processor/para_instr.v
+Warning:  ../../rtl/processor/fpu.v:623: The statements in initial blocks are ignored. (VER-281)
+Warning:  ../../rtl/processor/para_instr.v:2: Parameter keyword used in local parameter declaration. (VER-329)
+Compiling source file ../../rtl/processor/processor.v
+Warning:  ../../rtl/processor/processor.v:54: The statements in initial blocks are ignored. (VER-281)
+Compiling source file ../../testbench/memory.v
+Presto compilation completed successfully.
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_1024x32_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x21_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x88_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x49_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x64_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x84_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x88_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x32_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x38_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x40_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x49_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x62_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x64_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x52_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x59_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x71_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x8_ss.db'
+Warning: Can't read link_library file ' '. (UID-3)
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/std_lib/tcbn65lpbwp12tlvtwc.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/dw_lib/dw_foundation.sldb'
+1
+elaborate $TOP_MODULE -lib work
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP2/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP2/libraries/syn/standard.sldb'
+  Loading link library 'sprf065lp_1024x32'
+  Loading link library 'sprf065lp_128x21'
+  Loading link library 'sprf065lp_128x88'
+  Loading link library 'sprf065lp_128x8'
+  Loading link library 'sprf065lp_256x49'
+  Loading link library 'sprf065lp_256x64'
+  Loading link library 'sprf065lp_256x84'
+  Loading link library 'sprf065lp_256x88'
+  Loading link library 'sprf065lp_256x8'
+  Loading link library 'sprf065lp_512x32'
+  Loading link library 'sprf065lp_512x38'
+  Loading link library 'sprf065lp_512x40'
+  Loading link library 'sprf065lp_512x49'
+  Loading link library 'sprf065lp_512x62'
+  Loading link library 'sprf065lp_512x64'
+  Loading link library 'sprf065lp_512x8'
+  Loading link library 'sprf065lp_64x52'
+  Loading link library 'sprf065lp_64x59'
+  Loading link library 'sprf065lp_64x71'
+  Loading link library 'sprf065lp_64x8'
+  Loading link library 'tcbn65lpbwp12tlvtwc'
+  Loading link library 'gtech'
+Warning: Can't read link_library file ' '. (UID-3)
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'top'.
+Information: Building the design 'processor'. (HDL-193)
+
+Inferred memory devices in process
+	in routine processor line 54 in file
+		'../../rtl/processor/processor.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  ins_fetch_req_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     ins_pc_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine processor line 126 in file
+		'../../rtl/processor/processor.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  data_address_reg   | Latch |   5   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory'. (HDL-193)
+
+Inferred memory devices in process
+	in routine memory line 22 in file
+		'../../testbench/memory.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    data_cell_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|    memory/31     |   32   |   32    |      5       | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'fpu'. (HDL-193)
+
+Statistics for case statements in always block at line 654 in file
+	'../../rtl/processor/fpu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           658            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine fpu line 601 in file
+		'../../rtl/processor/fpu.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    data_FPR_reg     | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine fpu line 623 in file
+		'../../rtl/processor/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      dest_reg       | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|  reg_fpu_instr_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    operand1_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| operand1_paired_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    operand2_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| operand2_paired_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 654 in file
+		'../../rtl/processor/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    reg_dest_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     flag_WB_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    result64_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   exception1_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpu line 679 in file
+		'../../rtl/processor/fpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    exception_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       FPR_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     result_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|     fpu/605      |   32   |   32    |      5       | N  |
+|     fpu/643      |   32   |   32    |      5       | N  |
+|     fpu/644      |   32   |   32    |      5       | N  |
+|     fpu/646      |   32   |   32    |      5       | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'module_adds'. (HDL-193)
+Warning:  ../../rtl/processor/fpu.v:112: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Information: Building the design 'module_addps'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_subs'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_subps'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_muls'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_mulps'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_divs'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_cvtpss'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'module_cvtsw'. (HDL-193)
+Warning:  ../../rtl/processor/fpu.v:460: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine module_cvtsw line 453 in file
+		'../../rtl/processor/fpu.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       msb_reg       | Latch |   5   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'module_cvtws'. (HDL-193)
+Presto compilation completed successfully.
+1
+#set current desing
+current_design $TOP_MODULE
+Current design is 'top'.
+{top}
+if {![link]} {
+  echo "#####################################"
+  echo "link not pass"
+  echo "please check your log for more detail"
+  echo "#####################################"
+  quit
+}
+
+  Linking design 'top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (14 designs)              /mnt/hgfs/SF/FPU/Processor/synthesis/work/top.db, etc
+  sprf065lp_1024x32 (library) /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_1024x32_ss.db
+  sprf065lp_128x21 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x21_ss.db
+  sprf065lp_128x88 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x88_ss.db
+  sprf065lp_128x8 (library)   /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x8_ss.db
+  sprf065lp_256x49 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x49_ss.db
+  sprf065lp_256x64 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x64_ss.db
+  sprf065lp_256x84 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x84_ss.db
+  sprf065lp_256x88 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x88_ss.db
+  sprf065lp_256x8 (library)   /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x8_ss.db
+  sprf065lp_512x32 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x32_ss.db
+  sprf065lp_512x38 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x38_ss.db
+  sprf065lp_512x40 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x40_ss.db
+  sprf065lp_512x49 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x49_ss.db
+  sprf065lp_512x62 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x62_ss.db
+  sprf065lp_512x64 (library)  /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x64_ss.db
+  sprf065lp_512x8 (library)   /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x8_ss.db
+  sprf065lp_64x52 (library)   /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x52_ss.db
+  sprf065lp_64x59 (library)   /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x59_ss.db
+  sprf065lp_64x71 (library)   /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x71_ss.db
+  sprf065lp_64x8 (library)    /mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x8_ss.db
+  tcbn65lpbwp12tlvtwc (library) /mnt/hgfs/SF/FPU/Processor/synthesis/std_lib/tcbn65lpbwp12tlvtwc.db
+  dw_foundation.sldb (library) /mnt/hgfs/SF/FPU/Processor/synthesis/dw_lib/dw_foundation.sldb
+
+#===========================================================
+#     set constrain
+#===========================================================
+#set clock 
+set CPUCLK_PERIOD 10
+10
+#creat cpu clock
+create_clock -name CPU_CLOCK clk  -period $CPUCLK_PERIOD
+1
+#set input/output delay
+#set_input_delay  0.1 -clock [get_clocks pll_core_sysclk] [all_inputs]
+#set_output_delay 0.1 -clock [get_clocks pll_core_sysclk] [all_outputs]
+set_dont_touch_network [all_clocks]
+1
+#===========================================================
+#    synthesis begin                  
+#===========================================================
+ungroup -flatten -all
+Information: Updating graph... (UID-83)
+Warning: Design 'top' contains 5 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+compile
+Warning: Can't read link_library file ' '. (UID-3)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | G-2012.06-DWBB_201206.2 |     *     |
+| Licensed DW Building Blocks        | A-2007.12-DWBB_0803     |     *     |
+============================================================================
+
+
+Information: There are 79 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: The trip points for the library named sprf065lp_1024x32 differ from those in the library named tcbn65lpbwp12tlvtwc. (TIM-164)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'top'
+Information: The register 'x_fpu/exception1_reg' will be removed. (OPT-1207)
+Information: The register 'x_fpu/exception_reg' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[31]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[30]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[29]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[28]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[27]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[26]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[25]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[24]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[23]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[22]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[21]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[20]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[19]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[18]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[17]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[16]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[15]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[14]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[13]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[12]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[11]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[10]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[9]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[8]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[7]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[6]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[5]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[4]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[3]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[2]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[1]' will be removed. (OPT-1207)
+Information: The register 'x_fpu/result_reg[0]' will be removed. (OPT-1207)
+Information: The register 'x_processor/ins_fetch_req_reg' will be removed. (OPT-1207)
+Information: Added key list 'DesignWare' to design 'top'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'top_DW01_sub_0'
+  Mapping 'top_DW_leftsh_0'
+  Mapping 'top_DW_leftsh_1'
+  Processing 'top_DW01_sub_1'
+  Mapping 'top_DW_cmp_0'
+  Mapping 'top_DW_cmp_1'
+  Processing 'top_DW01_sub_2'
+  Processing 'top_DW01_inc_0'
+  Processing 'top_DW01_add_0'
+  Processing 'top_DW01_add_1'
+  Mapping 'top_DW_cmp_3'
+  Mapping 'top_DW_cmp_4'
+  Processing 'top_DW01_sub_3'
+  Processing 'top_DW01_sub_4'
+  Mapping 'top_DW_cmp_5'
+  Mapping 'top_DW_cmp_6'
+  Processing 'top_DW01_sub_5'
+  Processing 'top_DW01_add_2'
+  Processing 'top_DW01_sub_6'
+  Mapping 'top_DW_cmp_7'
+  Mapping 'top_DW_cmp_8'
+  Processing 'top_DW01_sub_7'
+  Processing 'top_DW01_add_3'
+  Processing 'top_DW01_sub_8'
+  Mapping 'top_DW_cmp_9'
+  Mapping 'top_DW_cmp_10'
+  Processing 'top_DW01_sub_9'
+  Processing 'top_DW01_add_4'
+  Processing 'top_DW01_add_5'
+  Mapping 'top_DW_leftsh_2'
+  Processing 'top_DW01_sub_10'
+  Mapping 'top_DW_leftsh_3'
+  Processing 'top_DW01_sub_11'
+  Mapping 'top_DW_cmp_11'
+  Processing 'top_DW01_sub_12'
+  Processing 'top_DW01_sub_13'
+  Processing 'top_DW01_inc_1'
+  Processing 'top_DW01_add_6'
+  Processing 'top_DW01_sub_14'
+  Processing 'top_DW01_add_7'
+  Mapping 'top_DW_leftsh_4'
+  Processing 'top_DW01_sub_15'
+  Mapping 'top_DW_cmp_12'
+  Processing 'top_DW01_sub_16'
+  Processing 'top_DW01_add_8'
+  Mapping 'top_DW_leftsh_5'
+  Processing 'top_DW01_sub_17'
+  Mapping 'top_DW_leftsh_6'
+  Processing 'top_DW01_sub_18'
+  Mapping 'top_DW_cmp_13'
+  Processing 'top_DW01_sub_19'
+  Processing 'top_DW01_sub_20'
+  Processing 'top_DW01_inc_2'
+  Processing 'top_DW01_add_9'
+  Processing 'top_DW01_sub_21'
+  Processing 'top_DW01_add_10'
+  Mapping 'top_DW_leftsh_7'
+  Processing 'top_DW01_sub_22'
+  Mapping 'top_DW_cmp_14'
+  Processing 'top_DW01_sub_23'
+  Processing 'top_DW01_add_11'
+  Mapping 'top_DW_leftsh_8'
+  Processing 'top_DW01_sub_24'
+  Mapping 'top_DW_leftsh_9'
+  Processing 'top_DW01_sub_25'
+  Mapping 'top_DW_cmp_15'
+  Processing 'top_DW01_sub_26'
+  Processing 'top_DW01_sub_27'
+  Processing 'top_DW01_inc_3'
+  Processing 'top_DW01_add_12'
+  Processing 'top_DW01_sub_28'
+  Processing 'top_DW01_add_13'
+  Mapping 'top_DW_leftsh_10'
+  Processing 'top_DW01_sub_29'
+  Mapping 'top_DW_cmp_16'
+  Processing 'top_DW01_sub_30'
+  Processing 'top_DW01_add_14'
+  Mapping 'top_DW_leftsh_11'
+  Processing 'top_DW01_sub_31'
+  Mapping 'top_DW_leftsh_12'
+  Processing 'top_DW01_sub_32'
+  Mapping 'top_DW_cmp_17'
+  Processing 'top_DW01_sub_33'
+  Processing 'top_DW01_sub_34'
+  Processing 'top_DW01_inc_4'
+  Processing 'top_DW01_add_15'
+  Processing 'top_DW01_sub_35'
+  Processing 'top_DW01_add_16'
+  Mapping 'top_DW_leftsh_13'
+  Processing 'top_DW01_sub_36'
+  Mapping 'top_DW_cmp_18'
+  Processing 'top_DW01_sub_37'
+  Processing 'top_DW01_add_17'
+  Mapping 'top_DW_leftsh_14'
+  Processing 'top_DW01_sub_38'
+  Mapping 'top_DW_leftsh_15'
+  Processing 'top_DW01_sub_39'
+  Mapping 'top_DW_cmp_19'
+  Processing 'top_DW01_sub_40'
+  Processing 'top_DW01_sub_41'
+  Processing 'top_DW01_inc_5'
+  Processing 'top_DW01_add_18'
+  Processing 'top_DW01_sub_42'
+  Processing 'top_DW01_add_19'
+  Mapping 'top_DW_leftsh_16'
+  Processing 'top_DW01_sub_43'
+  Mapping 'top_DW_cmp_20'
+  Processing 'top_DW01_sub_44'
+  Processing 'top_DW01_add_20'
+  Mapping 'top_DW_leftsh_17'
+  Processing 'top_DW01_sub_45'
+  Mapping 'top_DW_leftsh_18'
+  Processing 'top_DW01_sub_46'
+  Mapping 'top_DW_cmp_21'
+  Processing 'top_DW01_sub_47'
+  Processing 'top_DW01_sub_48'
+  Processing 'top_DW01_inc_6'
+  Processing 'top_DW01_add_21'
+  Processing 'top_DW01_sub_49'
+  Processing 'top_DW01_add_22'
+  Mapping 'top_DW_leftsh_19'
+  Processing 'top_DW01_sub_50'
+  Mapping 'top_DW_cmp_22'
+  Processing 'top_DW01_sub_51'
+  Processing 'top_DW01_inc_7'
+  Processing 'top_DW01_inc_8'
+  Processing 'top_DW01_inc_9'
+  Processing 'top_DW01_add_23'
+  Mapping 'top_DW_leftsh_20'
+  Processing 'top_DW01_sub_52'
+  Processing 'top_DW01_sub_53'
+  Mapping 'top_DW_cmp_23'
+  Processing 'top_DW01_add_24'
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP2/libraries/syn/dw_foundation.sldb'
+  Allocating blocks in 'DW_div_uns_a_width24_b_width24'
+  Allocating blocks in 'DW_div_a_width24_b_width24_tc_mode0_rem_mode1'
+  Processing 'top_DW_div_uns_0'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'top_DW01_add_25'
+  Mapping 'top_DW01_add_26'
+  Mapping 'top_DW01_add_27'
+  Mapping 'top_DW01_add_28'
+  Mapping 'top_DW01_add_29'
+  Mapping 'top_DW01_add_30'
+  Mapping 'top_DW01_add_31'
+  Mapping 'top_DW01_add_32'
+  Mapping 'top_DW01_add_33'
+  Mapping 'top_DW01_add_34'
+  Mapping 'top_DW01_add_35'
+  Mapping 'top_DW01_add_36'
+  Mapping 'top_DW01_add_37'
+  Mapping 'top_DW01_add_38'
+  Mapping 'top_DW01_add_39'
+  Mapping 'top_DW01_add_40'
+  Mapping 'top_DW01_add_41'
+  Mapping 'top_DW01_add_42'
+  Mapping 'top_DW01_add_43'
+  Mapping 'top_DW_cmp_24'
+  Mapping 'top_DW_cmp_25'
+  Building model 'DW01_add_width8' (rpl)
+  Processing 'DW01_add_width8'
+  Building model 'DW01_sub_width8' (rpl)
+  Processing 'DW01_sub_width8'
+  Building model 'DW01_add_width9' (rpl)
+  Processing 'DW01_add_width9'
+  Processing 'top_DW01_add_44'
+  Processing 'top_DW01_sub_54'
+  Processing 'top_DW01_add_45'
+  Processing 'top_DW01_sub_55'
+  Processing 'top_DW01_add_46'
+  Processing 'top_DW01_sub_56'
+  Processing 'top_DW01_add_47'
+  Processing 'top_DW01_sub_57'
+  Processing 'top_DW01_add_48'
+  Processing 'top_DW01_sub_58'
+  Processing 'top_DW01_add_49'
+  Processing 'top_DW01_sub_59'
+  Processing 'top_DW01_add_50'
+  Processing 'top_DW01_add_51'
+  Mapping 'top_DW_mult_uns_0'
+  Processing 'top_DW01_add_52'
+  Processing 'top_DW01_add_53'
+  Mapping 'top_DW_mult_uns_1'
+  Processing 'top_DW01_add_54'
+  Processing 'top_DW01_add_55'
+  Mapping 'top_DW_mult_uns_2'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Allocating blocks in 'DW_div_uns_a_width24_b_width24'
+  Allocating blocks in 'DW_div_a_width24_b_width24_tc_mode0_rem_mode1'
+  Mapping Optimization (Phase 1)
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:12  171045.1      7.47     201.3     489.3                          
+    0:01:12  171045.1      7.47     201.3     489.3                          
+    0:01:12  176275.2      7.13     197.9     467.3                          
+    0:01:14  190359.4      7.11     185.9     123.1                          
+    0:01:15  202781.8      6.45     125.8      39.8                          
+    0:01:27  205318.6      1.43      44.7       0.8                          
+    0:01:27  205381.0      1.53      46.7       0.8                          
+    0:01:27  205381.0      1.53      46.7       0.8                          
+    0:01:28  205392.0      1.52      46.5       0.8                          
+    0:01:28  205392.0      1.52      46.5       0.8                          
+    0:01:28  205392.0      1.52      46.5       0.8                          
+    0:01:35  140385.1      2.33      70.6       0.0                          
+    0:01:38  139357.9      2.31      67.5       0.0                          
+    0:01:41  139233.1      2.00      51.6       0.0                          
+    0:01:41  139185.6      1.90      45.1       0.0                          
+    0:01:42  139156.8      1.90      45.6       0.0                          
+    0:01:43  139200.0      1.88      44.8       0.0                          
+    0:01:43  139208.2      1.87      44.3       0.0                          
+    0:01:44  139236.0      1.84      42.7       0.0                          
+    0:01:44  139228.8      1.82      42.5       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:45  139246.6      1.83      42.0       0.0                          
+    0:01:46  139361.3      1.63      38.0       0.0 x_fpu/result64_reg[22]/D 
+    0:01:46  139489.0      1.51      35.6       0.0 x_fpu/result64_reg[54]/D 
+    0:01:47  139508.2      1.50      35.2       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:47  139508.2      1.50      35.2       0.0                          
+    0:01:49  139788.0      1.23      27.1       0.0 x_fpu/result64_reg[54]/D 
+    0:01:50  140030.9      1.06      22.8       0.0 x_fpu/result64_reg[54]/D 
+    0:01:51  140055.8      1.05      22.6       0.0 x_fpu/result64_reg[54]/D 
+    0:01:51  140065.9      1.04      22.0       0.0 x_fpu/result64_reg[54]/D 
+    0:01:51  140065.9      1.03      21.9       0.0 x_fpu/result64_reg[54]/D 
+    0:01:52  140079.4      1.03      21.8       0.0 x_fpu/result64_reg[54]/D 
+    0:01:52  140125.9      1.00      21.3       0.0 x_fpu/result64_reg[54]/D 
+    0:01:53  140139.8      0.96      20.2       0.0 x_fpu/result64_reg[22]/D 
+    0:01:53  140171.0      0.95      20.1       0.0 x_fpu/result64_reg[54]/D 
+    0:01:53  140193.1      0.94      19.8       0.0 x_fpu/result64_reg[54]/D 
+    0:01:53  140224.3      0.92      19.4       0.0 x_fpu/result64_reg[22]/D 
+    0:01:54  140238.7      0.91      19.2       0.0 x_fpu/result64_reg[54]/D 
+    0:01:54  140266.6      0.90      18.9       0.0 x_fpu/result64_reg[54]/D 
+    0:01:54  140286.2      0.89      18.7       0.0 x_fpu/result64_reg[22]/D 
+    0:01:54  140287.2      0.88      18.5       0.0 x_fpu/result64_reg[54]/D 
+    0:01:55  140313.6      0.87      18.3       0.0 x_fpu/result64_reg[54]/D 
+    0:01:55  140314.1      0.87      18.3       0.0 x_fpu/result64_reg[54]/D 
+    0:01:56  140492.2      0.83      15.7       0.0 x_fpu/result64_reg[22]/D 
+    0:01:57  140531.0      0.77      15.0       0.0 x_fpu/result64_reg[22]/D 
+    0:01:57  140558.4      0.73      14.6       0.0 x_fpu/result64_reg[22]/D 
+    0:01:57  140567.5      0.72      14.5       0.0 x_fpu/result64_reg[22]/D 
+    0:01:57  140587.7      0.70      14.4       0.0 x_fpu/result64_reg[22]/D 
+    0:01:58  140599.2      0.70      14.3       0.0 x_fpu/result64_reg[22]/D 
+    0:01:58  140611.2      0.69      14.1       0.0 x_fpu/result64_reg[22]/D 
+    0:01:58  140639.5      0.66      13.5       0.0 x_fpu/result64_reg[22]/D 
+    0:02:00  140788.3      0.62      11.7       0.0 x_fpu/result64_reg[22]/D 
+    0:02:01  140821.4      0.59      11.2       0.0 x_fpu/result64_reg[54]/D 
+    0:02:01  140843.5      0.58      11.0       0.0 x_fpu/result64_reg[22]/D 
+    0:02:01  140869.0      0.57      10.7       0.1 x_fpu/result64_reg[22]/D 
+    0:02:01  140883.8      0.55      10.4       0.1 x_fpu/result64_reg[22]/D 
+    0:02:02  140888.2      0.54       9.8       0.1 x_fpu/result64_reg[54]/D 
+    0:02:02  140893.0      0.53       9.6       0.1 x_fpu/result64_reg[22]/D 
+    0:02:02  140912.6      0.52       9.5       0.1 x_fpu/result64_reg[22]/D 
+    0:02:02  140925.6      0.51       9.4       0.1 x_fpu/result64_reg[54]/D 
+    0:02:03  140950.6      0.50       8.3       0.1 x_fpu/result64_reg[22]/D 
+    0:02:03  140947.7      0.49       8.0       0.1 x_fpu/result64_reg[54]/D 
+    0:02:03  140982.7      0.48       8.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:03  141014.9      0.47       7.9       0.1 x_fpu/result64_reg[22]/D 
+    0:02:04  141024.5      0.47       7.8       0.1 x_fpu/result64_reg[22]/D 
+    0:02:04  141033.6      0.45       7.6       0.1 x_fpu/result64_reg[54]/D 
+    0:02:04  141040.8      0.45       7.6       0.1 x_fpu/result64_reg[54]/D 
+    0:02:04  141050.4      0.45       7.6       0.1 x_fpu/result64_reg[22]/D 
+    0:02:04  141047.5      0.44       7.4       0.1 x_fpu/result64_reg[54]/D 
+    0:02:05  141054.7      0.44       7.4       0.1 x_fpu/result64_reg[22]/D 
+    0:02:05  141055.2      0.43       7.4       0.1 x_fpu/result64_reg[22]/D 
+    0:02:05  141106.1      0.43       7.1       0.1 x_fpu/result64_reg[54]/D 
+    0:02:07  141193.0      0.38       6.2       0.1 x_fpu/result64_reg[22]/D 
+    0:02:07  141232.3      0.35       5.4       0.1 x_fpu/result64_reg[54]/D 
+    0:02:08  141258.7      0.34       5.3       0.1 x_fpu/result64_reg[22]/D 
+    0:02:08  141262.6      0.33       5.2       0.1 x_fpu/result64_reg[22]/D 
+    0:02:08  141275.0      0.33       5.2       0.1 x_fpu/result64_reg[22]/D 
+    0:02:09  141284.2      0.32       5.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:09  141299.0      0.31       4.6       0.1 x_fpu/result64_reg[54]/D 
+    0:02:09  141313.9      0.31       4.6       0.1 x_fpu/result64_reg[22]/D 
+    0:02:10  141325.4      0.30       4.6       0.1 x_fpu/result64_reg[54]/D 
+    0:02:10  141342.7      0.30       4.6       0.1 x_fpu/result64_reg[22]/D 
+    0:02:10  141353.3      0.30       4.4       0.1 x_fpu/result64_reg[22]/D 
+    0:02:10  141353.8      0.29       4.4       0.1 x_fpu/result64_reg[22]/D 
+    0:02:11  141368.2      0.29       4.4       0.1 x_fpu/result64_reg[22]/D 
+    0:02:12  141393.6      0.27       3.8       0.1 x_fpu/result64_reg[22]/D 
+    0:02:12  141410.4      0.27       3.8       0.1 x_fpu/result64_reg[22]/D 
+    0:02:13  141424.3      0.26       3.7       0.1 x_fpu/result64_reg[22]/D 
+    0:02:13  141449.8      0.24       3.5       0.1 x_fpu/result64_reg[54]/D 
+    0:02:14  141483.8      0.23       3.3       0.1 x_fpu/result64_reg[22]/D 
+    0:02:15  141521.8      0.22       3.1       0.1 x_fpu/result64_reg[54]/D 
+    0:02:16  141538.1      0.21       3.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:16  141568.8      0.21       3.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:16  141588.5      0.21       2.9       0.1 x_fpu/result64_reg[22]/D 
+    0:02:17  141640.8      0.19       2.6       0.1 x_fpu/result64_reg[22]/D 
+    0:02:18  141670.1      0.18       2.6       0.1 x_fpu/result64_reg[22]/D 
+    0:02:18  141688.8      0.18       2.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:18  141711.8      0.17       2.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:19  141721.9      0.15       1.9       0.1 x_fpu/result64_reg[22]/D 
+    0:02:19  141729.1      0.14       1.8       0.1 x_fpu/result64_reg[22]/D 
+    0:02:20  141766.6      0.12       1.2       0.1 x_fpu/result64_reg[22]/D 
+    0:02:20  141778.6      0.11       1.1       0.1 x_fpu/result64_reg[22]/D 
+    0:02:20  141786.7      0.11       1.1       0.1 x_fpu/result64_reg[22]/D 
+    0:02:21  141810.7      0.10       1.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:21  141819.4      0.10       1.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:21  141832.3      0.09       1.0       0.1 x_fpu/result64_reg[54]/D 
+    0:02:22  141851.0      0.07       0.5       0.1 x_fpu/result64_reg[54]/D 
+    0:02:23  141861.1      0.07       0.5       0.1 x_fpu/result64_reg[22]/D 
+    0:02:23  141877.9      0.07       0.5       0.1 x_fpu/result64_reg[22]/D 
+    0:02:23  141888.0      0.06       0.5       0.1 x_fpu/result64_reg[22]/D 
+    0:02:23  141904.3      0.05       0.4       0.1 x_fpu/result64_reg[54]/D 
+    0:02:23  141903.4      0.05       0.4       0.1 x_fpu/result64_reg[54]/D 
+    0:02:24  141966.7      0.04       0.4       0.1 x_fpu/result64_reg[54]/D 
+    0:02:25  142016.2      0.03       0.2       0.1 x_fpu/result64_reg[22]/D 
+    0:02:26  142020.0      0.02       0.2       0.1 x_fpu/result64_reg[54]/D 
+    0:02:27  142025.3      0.01       0.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:27  142034.9      0.00       0.0       0.1 x_fpu/result64_reg[22]/D 
+    0:02:27  142055.0      0.00       0.0       0.1                          
+    0:02:31  142049.8      0.00       0.0       0.1                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:02:31  142049.8      0.00       0.0       0.1                          
+    0:02:31  142034.4      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:02:31  142034.4      0.00       0.0       0.0                          
+    0:02:31  142034.4      0.00       0.0       0.0                          
+    0:02:31  142034.4      0.00       0.0       0.0                          
+    0:02:34  141306.7      0.12       1.2       0.0                          
+    0:02:34  140916.0      0.12       1.2       0.0                          
+    0:02:35  140775.8      0.13       1.3       0.0                          
+    0:02:35  140669.8      0.13       1.3       0.0                          
+    0:02:35  140578.6      0.14       1.4       0.0                          
+    0:02:35  140497.9      0.15       1.5       0.0                          
+    0:02:35  140442.7      0.16       1.6       0.0                          
+    0:02:36  140389.0      0.16       1.6       0.0                          
+    0:02:36  140338.6      0.17       1.7       0.0                          
+    0:02:36  140290.1      0.19       1.9       0.0                          
+    0:02:36  140243.0      0.20       2.0       0.0                          
+    0:02:36  140197.4      0.21       2.1       0.0                          
+    0:02:36  140163.8      0.21       2.1       0.0                          
+    0:02:37  140144.2      0.22       2.2       0.0                          
+    0:02:37  140144.2      0.22       2.2       0.0                          
+    0:02:37  140167.2      0.06       0.4       0.0 x_fpu/result64_reg[22]/D 
+    0:02:38  140187.4      0.03       0.1       0.0 x_fpu/result64_reg[22]/D 
+    0:02:38  140235.8      0.01       0.0       0.0                          
+    0:02:39  140245.0      0.00       0.0       0.0                          
+    0:02:39  140244.5      0.00       0.0       0.0                          
+    0:02:39  140244.5      0.00       0.0       0.0                          
+    0:02:39  140244.5      0.00       0.0       0.0                          
+    0:02:40  138765.6      1.18      12.8       0.0                          
+    0:02:40  138400.3      1.16      13.1       0.0                          
+    0:02:40  138293.8      1.15      12.9       0.0                          
+    0:02:40  138286.6      1.14      12.8       0.0                          
+    0:02:40  138286.6      1.14      12.8       0.0                          
+    0:02:40  138286.6      1.14      12.8       0.0                          
+    0:02:40  138286.6      1.14      12.8       0.0                          
+    0:02:40  138286.6      1.14      12.8       0.0                          
+    0:02:41  138392.2      0.58       6.5       0.0 x_fpu/result64_reg[22]/D 
+    0:02:41  138459.4      0.39       4.9       0.0 x_fpu/result64_reg[22]/D 
+    0:02:42  138517.0      0.33       4.5       0.0 x_fpu/result64_reg[54]/D 
+    0:02:42  138618.7      0.27       3.9       0.0 x_fpu/result64_reg[22]/D 
+    0:02:43  138716.6      0.23       3.2       0.0 x_fpu/result64_reg[22]/D 
+    0:02:44  138772.8      0.20       2.7       0.0 x_fpu/result64_reg[54]/D 
+    0:02:45  139139.5      0.13       1.5       0.0 x_fpu/result64_reg[22]/D 
+    0:02:47  139262.9      0.11       0.4       0.0 x_fpu/result64_reg[22]/D 
+    0:02:48  139331.5      0.08       0.3       0.0 x_fpu/result64_reg[22]/D 
+    0:02:50  139432.8      0.06       0.2       0.0 x_fpu/result64_reg[22]/D 
+    0:02:50  139477.4      0.05       0.2       0.0 x_fpu/result64_reg[22]/D 
+    0:02:51  139556.6      0.02       0.0       0.0 x_fpu/result64_reg[22]/D 
+    0:02:52  139578.7      0.01       0.0       0.0 x_fpu/result64_reg[22]/D 
+    0:02:52  139584.0      0.00       0.0       0.0                          
+    0:02:57  137090.4      0.00       0.0       0.0                          
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_1024x32_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x21_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x88_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_128x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x49_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x64_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x84_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x88_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_256x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x32_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x38_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x40_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x49_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x62_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x64_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_512x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x52_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x59_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x71_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/memory_lib/sprf065lp_64x8_ss.db'
+Loading db file '/mnt/hgfs/SF/FPU/Processor/synthesis/std_lib/tcbn65lpbwp12tlvtwc.db'
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 3312 load(s), 1 driver(s)
+1
+#######################################
+#      scan chain connect             #
+#######################################
+#set SCAN_NUM 4 
+#
+#set_scan_configuration -chain_count $SCAN_NUM 
+#
+#set_dft_signal -view existing_dft  -type ScanClock   -port pad_had_jtg_tclk     -timing [list 45 55]
+#set_dft_signal -view existing_dft  -type Reset       -port pad_had_jtg_trst_b   -active_state 0
+#set_dft_signal -view existing_dft  -type ScanEnable  -port pad_yy_scan_enable   -active_state 1
+#set_dft_signal -view existing_dft  -type Constant    -port pad_yy_test_mode     -active_state 1
+#
+#for {set i 1} { $i <= $SCAN_NUM } {incr i} {
+#  set_scan_path  chain_${i} 
+#  set_dft_signal -view existing_dft  -port top_si_${i}  -type ScanDataIn
+#  set_dft_signal -view existing_dft  -port top_so_${i}  -type ScanDataOut
+#}
+#
+#set_dft_insertion_configuration -preserve_design_name true -synthesis_optimization none
+#set_scan_configuration -clock_mixing mix_clocks
+#
+#create_test_protocol
+#insert_dft
+#set_ideal_network pad_yy_scan_enable
+#===========================================================
+# report synthesis result
+#===========================================================
+report_constraint -all_violators -verbose > ./syn_result/$TOP_MODULE.Violators
+write -hierarchy -format verilog -output ./syn_result/$TOP_MODULE.gv
+Writing verilog file '/mnt/hgfs/SF/FPU/Processor/synthesis/work/syn_result/top.gv'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 4 nets to module top using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+report_timing -nets > ./syn_result/$TOP_MODULE.violators.nets
+report_timing -nworst 100 > ./syn_result/$TOP_MODULE.violators
+report_design
+ 
+****************************************
+Report : design
+Design : top
+Version: G-2012.06-SP2
+Date   : Fri Nov  6 21:19:44 2020
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    tcbn65lpbwp12tlvtwc (File: /mnt/hgfs/SF/FPU/Processor/synthesis/std_lib/tcbn65lpbwp12tlvtwc.db)
+
+Local Link Library:
+
+    {../std_lib/tcbn65lpbwp12tlvtwc.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : WCCOM
+    Library : tcbn65lpbwp12tlvtwc
+    Process :   1.00
+    Temperature : 125.00
+    Voltage :   1.08
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected automatically from the total cell area.
+
+Name           :   ZeroWireload
+Location       :   tcbn65lpbwp12tlvtwc
+Resistance     :   1e-05
+Capacitance    :   1
+Area           :   0
+Slope          :   0
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     0.00
+     2     0.00
+     3     0.00
+     4     0.00
+     5     0.00
+     6     0.00
+     7     0.00
+     8     0.00
+     9     0.00
+    10     0.00
+    11     0.00
+    12     0.00
+    13     0.00
+    14     0.00
+    15     0.00
+    16     0.00
+    17     0.00
+    18     0.00
+    19     0.00
+    20     0.00
+
+
+
+Wire Loading Model Mode: segmented.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    DesignWare
+
+Design Parameters:
+
+    None specified.
+1
+report_area   > ./syn_result/$TOP_MODULE.area
+check_timing  > ./syn_result/$TOP_MODULE.loop_check
+#===========================================================
+# quit
+#===========================================================
+quit
+
+Memory usage for main task 388 Mbytes.
+Memory usage for this session 388 Mbytes.
+CPU usage for this session 173 seconds ( 0.05 hours ).
+
+Thank you...

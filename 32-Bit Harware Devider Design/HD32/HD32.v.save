@@ -1,0 +1,58 @@
+// HD32.v
+
+`define InputWidth 32
+`define OutputWidth 32
+
+module HD32(
+    input [`InputWidth-1:0] dividend,
+    input [`InputWidth-1:0] divider,
+    output reg [`OutputWidth-1:0] quotient,
+    output reg [`OutputWidth-1:0] remainder
+    // input clk;
+);
+
+reg [`InputWidth-1:0] msb_dividend; // the first "1" in dividend
+reg [`InputWidth-1:0] msb_divider;  // the first "1" in divider
+
+reg [`InputWidth-1:0] reg_dividend;  
+reg [`InputWidth-1:0] reg_divider;  
+
+// determine the msb of 1
+always @(dividend) begin
+reg_dividend=dividend;
+msb_dividend=msb(dividend);
+end
+always @(divider) begin
+reg_divider=divider;
+msb_divider=msb(divider);
+end
+always @(dividend or divider) begin
+
+/*
+always (reg_divider or reg_dividend) begin
+    //compare two oprators
+    if
+end
+*/
+
+
+// function, determine msb for 1
+function [`InputWidth-1:0] msb;
+input [`InputWidth-1:0] in;
+begin:func
+reg [`InputWidth-1:0] i; // interation variable
+reg flag; // whether find msb yet
+flag=0; 
+    for(i=`InputWidth-1;i>=0;i=i-1)
+    begin
+        if (flag==0) begin  // not find msb yet
+            if (in[i]==1) begin
+            msb=i;
+            flag=1;
+            end
+        end
+    end
+end
+endfunction
+endmodule
+

@@ -1,0 +1,49 @@
+verdiWindowResize -win Verdi_1 "0" "25" "1280" "767"
+debImport "test.vcd"
+wvCreateWindow
+wvConvertFile -win $_nWave2 -o \
+           "/home/edauser/Processor/verification/target/test.vcd.fsdb" \
+           "test.vcd"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+schSetOptions -win $_nSchema1 -annotate off
+wvOpenFile -win $_nWave2 \
+           {/home/edauser/Processor/verification/target/test.vcd.fsdb}
+verdiDockWidgetDisplay -dock widgetDock_WelcomePage
+verdiDockWidgetHide -dock widgetDock_WelcomePage
+srcHBSelect "\$root" -win $_nTrace1
+verdiWindowResize -win Verdi_1 "0" "25" "1918" "779"
+verdiDockWidgetSetCurTab -dock widgetDock_<Decl._Tree>
+verdiDockWidgetSetCurTab -dock widgetDock_<Inst._Tree>
+verdiDockWidgetSetCurTab -dock widgetDock_<Decl._Tree>
+verdiDockWidgetSetCurTab -dock widgetDock_<Inst._Tree>
+srcHBSelect "\$root" -win $_nTrace1
+srcHBSelect "\$root" -win $_nTrace1
+srcHBSelect "\$root" -win $_nTrace1
+wvSetCursor -win $_nWave2 111560.757160
+wvSetCursor -win $_nWave2 22317.717944
+wvSetCursor -win $_nWave2 22317.717944
+wvSetCursor -win $_nWave2 23753.360619
+wvSetCursor -win $_nWave2 34846.963105
+wvSetCursor -win $_nWave2 38501.326277
+wvZoom -win $_nWave2 46854.156385 49203.389853
+wvZoom -win $_nWave2 259127.896259 263850.044711
+wvZoom -win $_nWave2 283328.907072 291002.398305
+wvSetCursor -win $_nWave2 313432.603448
+wvSetCursor -win $_nWave2 326418.511689
+wvSetCursor -win $_nWave2 337633.614261
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSetCursor -win $_nWave2 283902.694617
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+verdiDockWidgetSetCurTab -dock widgetDock_<Message>
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiDockWidgetSetCurTab -dock widgetDock_<Message>
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSaveSignal -win $_nWave2 \
+           "/home/edauser/Processor/verification/target/verdiLog/novas_autosave.ses.wave.0"
+debExit
